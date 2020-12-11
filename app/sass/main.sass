@@ -1,0 +1,4508 @@
+html
+    margin: 0
+    padding: 0
+    height: 100%
+body
+    height: 100%
+    margin: 0
+    padding: 0
+    outline: none
+    font-family: 'Open Sans', sans-serif
+    font-size: 23px
+    color: #1F1E31
+    background: #F2F2F2 0% 0% no-repeat padding-box
+    box-sizing: border-box
+    .header
+        background: #F2F2F2
+        padding-top: 30px
+        height: 67px
+        width: 100%
+        position: fixed
+        top: 0
+        z-index: 10
+        .header_wrap
+            margin: 0 auto
+            max-width: 1344px
+            display: flex
+            justify-content: space-between
+            align-items: center
+            .logo
+                width: 62px
+                height: 69px
+                background: url(../img/logo.png)
+                position: relative
+                top: -1px
+                transition: 0.2s
+                &:hover
+                    background: url(../img/logoHover.png)
+            .burger
+                display: none
+            .menu
+                display: flex
+                position: relative
+                top: -4px
+                div
+                    overflow: hidden
+                    height: 40px
+                    &:first-of-type
+                        margin-right: 53px
+                    &:nth-of-type(2)
+                        margin-right: 44px
+                    .link
+                        text-transform: uppercase
+                        font-weight: 700
+                        font-size: 13px
+                        color: #000000
+                        text-decoration: none
+                        position: relative
+                        &:hover::before
+                            content: ''
+                            display: inline-block
+                            position: absolute
+                            top: 21px
+                            height: 1px
+                            background: #000000
+                            transition: all
+                            animation: links 0.7s forwards
+                        &:hover + .link_active::before
+                            display: none
+                    .link_safari
+                        text-transform: uppercase
+                        font-weight: 700
+                        font-size: 13px
+                        color: #000000
+                        text-decoration: none
+                        position: relative
+                        &::before
+                            content: ''
+                            display: inline-block
+                            position: absolute
+                            top: 21px
+                            height: 1px
+                            width: 0%
+                            background: #000000
+                            transition: all 0.4s
+                        &:hover::before
+                            width: 100%
+                    .link_active
+                        &::before
+                            content: ''
+                            display: inline-block
+                            position: absolute
+                            top: 21px
+                            height: 1px
+                            width: 55%
+                            background: #000000
+    .help
+        width: 11px
+        height: 106px
+        position: fixed
+        left: 95%
+        opacity: 0
+        .line_wrap
+            height: 50px
+            width: 1px
+            position: relative
+            left: 5px
+            overflow: hidden
+            .line
+                background: #1F1E31
+                height: 50px
+                width: 1px
+                position: relative
+                animation: scroll 4s infinite linear
+    .help_active
+        opacity: 1
+        animation: scrollOpacity 1s forwards linear
+    .secondButton2
+        opacity: 0
+        display: block
+        text-decoration: none
+        z-index: 4
+        position: fixed
+        top: 89%
+        left: 8%
+        width: 62px
+        height: 62px
+        color: #ffffff
+        font-size: 18px
+        overflow: hidden
+        transition: opacity .8s cubic-bezier(.33,0,.67,1) 1.2s,transform 2s cubic-bezier(.33,0,0,1) .8s,background .2s,width .2s!important
+        transform: translateY(50px)
+        transition-delay: 1.8s,1.45s,0s,0s!important
+        span
+            opacity: 0
+            height: 19px
+            display: block
+            position: absolute
+            width: 242px
+        &::after
+            content: "+"
+            display: block
+            padding: 13px 23.5px
+            background: #1F1E31
+            position: absolute
+            border-radius: 50%
+            font-size: 26px
+            color: #ffffff
+        &:hover
+            width: 215px
+            background: #67D4F7
+            border-radius: 31px
+            padding-top: 18px
+            padding-left: 26px
+            padding-bottom: 25px
+            height: 19px
+        &:hover span
+            opacity: 1
+        &:hover::after
+            padding: 4.5px 15px
+            background: #ffffff
+            color: #67d4f7
+            top: 8px
+            left: 187px
+    .btn_active
+        opacity: 1
+        transform: translateY(0)
+    .container
+        max-width: 1344px
+        margin: 0 auto
+        .title
+            transition: opacity .8s cubic-bezier(.33,0,.67,1) .6s,transform 2s cubic-bezier(.15,.55,.43,1) .2s
+            transition-delay: .3s,.15s
+            opacity: 0
+            transform: translateY(50px)
+        .imgs
+            transition: opacity .8s cubic-bezier(.33,0,.67,1) .6s,transform 2s cubic-bezier(.15,.55,.43,1) .2s
+            transition-delay: .3s,.15s
+            opacity: 0
+        .text
+            transition: opacity .8s cubic-bezier(.33,0,.67,1) 1.2s,transform 2s cubic-bezier(.33,0,0,1) .8s
+            transition-delay: .8s,.5s
+            opacity: 0
+            transform: translateY(50px)
+        .firstButton, .thirdButton
+            transition: opacity .8s cubic-bezier(.33,0,.67,1) 1.2s,transform 2s cubic-bezier(.33,0,0,1) .8s,background .2s!important
+            transition-delay: 1.1s,.9s,0s!important
+            opacity: 0
+            transform: translateY(50px)
+        .offer
+            transition: opacity .8s cubic-bezier(.33,0,.67,1) 1.2s,transform 2s cubic-bezier(.33,0,0,1) .8s
+            opacity: 0
+            transform: translateY(50px)
+        .offer1
+            transition-delay: 1.1s,.9s
+        .offer2
+            transition-delay: 1.25s,1s
+        .offer3
+            transition-delay: 1.4s,1.1s
+        .secondButton
+            transition: opacity .8s cubic-bezier(.33,0,.67,1) 1.2s,transform 2s cubic-bezier(.33,0,0,1) .8s,background .2s,width .2s!important
+            opacity: 0
+            transform: translateY(50px)
+        #btnid2
+            transition-delay: 1.6s,1.25s,0s!important
+        .animate
+            opacity: 1!important
+            transform: translateY(0)!important
+        .animate_imgs
+            opacity: 1!important
+        .section
+            height: 100vh
+            display: flex
+            justify-content: space-between
+        .firstSection
+            .firstSection_wrap
+                display: flex
+                justify-content: space-between
+                max-height: 100%
+                .firstContent
+                    max-height: 100%
+                    .firstTitle
+                        margin-top: 155px
+                        margin-bottom: 0
+                        font-weight: 400
+                        font-size: 73px
+                        width: 580px
+                        line-height: 1.1
+                        letter-spacing: -2.1px
+                        span
+                            color: #67D4F7
+                    .firstText
+                        font-size: 23px
+                        width: 530px
+                        letter-spacing: -0.3px
+                    .firstButton
+                        text-decoration: none
+                        display: block
+                        width: 215px
+                        background: #1F1E31 0% 0% no-repeat padding-box
+                        font-size: 18px
+                        color: #ffffff
+                        border-radius: 31px
+                        padding-top: 18px
+                        padding-left: 26px
+                        padding-bottom: 25px
+                        position: relative
+                        margin-top: 95px
+                        transition: 0.2s
+                        span
+                            display: block
+                            height: 19px
+                        &::after
+                            content: "+"
+                            display: block
+                            padding: 4.5px 15px
+                            background: #1F1E31
+                            position: absolute
+                            border-radius: 50%
+                            font-size: 26px
+                            top: 8px
+                            left: 187px
+                            transition: 0.2s
+                        &:hover
+                            background: #67d4f7
+                        &:hover::after
+                            background: #ffffff
+                            color: #67d4f7
+                .firstImgs
+                    position: relative
+                    max-height: 100%
+                    #pic5
+                        position: relative
+                        top: 0px
+                        left: 270px
+                        height: 642px
+                    #pic4
+                        position: relative
+                        top: 310px
+                        left: 65px
+                        animation: pic4 8s infinite linear
+                    #pic3
+                        position: relative
+                        top: 440px
+                        left: 173px
+                        z-index: 2
+                        animation: pic3 8s infinite linear
+                    #pic1
+                        position: relative
+                        top: 450px
+                        left: 250px
+                        z-index: 2
+                        animation: pic1 8s infinite linear
+                    #pic2
+                        position: relative
+                        top: 400px
+                        left: 110px
+                        animation: pic2 6s infinite linear
+                    #pic6
+                        position: relative
+                        top: 65px
+                        left: 345px
+                        z-index: 2
+                        animation: pic6 8s infinite linear
+                    #pic7
+                        position: relative
+                        top: 400px
+                        left: 290px
+                        z-index: 2
+                        animation: pic7 16s infinite linear
+                    #pic8
+                        position: relative
+                        top: 510px
+                        left: 155px
+                        z-index: 2
+                        animation: pic8 8s infinite linear
+        .secondSection
+            .secondSection_wrap
+                display: flex
+                justify-content: space-between
+                .secondContent
+                    .secondTitle
+                        width: 618px
+                        font-size: 73px
+                        font-weight: 400
+                        margin-top: 116px
+                        margin-bottom: 0
+                        line-height: 1.2
+                        letter-spacing: -1.1px
+                        span
+                            color: #FF4D77
+                    .secondText
+                        font-size: 23px
+                        width: 571px
+                        margin-top: 21px
+                        margin-bottom: 63px
+                        letter-spacing: -0.2px
+                    .offer
+                        display: flex
+                        p
+                            margin: 0
+                            font-size: 23px
+                            font-weight: 600
+                            letter-spacing: -1.2px
+                    .offer1
+                        margin-bottom: 30px
+                        img
+                            width: 34px
+                            height: 30px
+                        p
+                            margin-left: 36px
+                            line-height: 30px
+                    .offer2
+                        margin-bottom: 30px
+                        img
+                            width: 35px
+                            height: 35px
+                        p
+                            margin-left: 35px
+                            line-height: 35px
+                    .offer3
+                        img
+                            width: 28px
+                            height: 28px
+                        p
+                            margin-left: 42px
+                            line-height: 28px
+                    .secondButton
+                        text-decoration: none
+                        background: #1F1E31
+                        display: block
+                        width: 150px
+                        border-radius: 31px
+                        font-size: 18px
+                        color: #ffffff
+                        padding-top: 19px
+                        padding-left: 26px
+                        padding-bottom: 19px
+                        margin-top: 67px
+                        transition: 0.2s
+                        margin-bottom: 95px
+                        &:hover
+                            background: #67D4F7
+                .secondImgs
+                    position: relative
+                    left: -68px
+                    #pic13
+                        position: relative
+                        top: 165px
+                        left: -5px
+                    #pic11
+                        position: relative
+                        top: 418px
+                        left: -5px
+                    #pic12
+                        position: relative
+                        top: 4px
+                        left: 381px
+                    #pic9
+                        position: relative
+                        top: 225px
+                        left: 184px
+                        animation: pic4 8s infinite linear
+                    #pic10
+                        position: relative
+                        top: 106px
+                        left: 142px
+                        animation: pic6 5s infinite linear
+                    #pic18
+                        position: relative
+                        top: -430px
+                        left: 28px
+                        z-index: -1
+                        animation: pic3 6s infinite linear
+                    #pic17
+                        position: relative
+                        top: -484px
+                        left: 274px
+                        animation: pic3 3s infinite linear
+                    #pic19
+                        position: relative
+                        top: -446px
+                        left: -12px
+                        animation: pic1 9s infinite linear
+                    #pic15
+                        position: relative
+                        top: -405px
+                        left: 481px
+                        animation: pic6 8s infinite linear
+                    #pic16
+                        position: relative
+                        top: -450px
+                        left: 473px
+                        animation: pic1 10s infinite linear
+                    #pic14
+                        position: relative
+                        top: -200px
+                        left: 628px
+        .thirdSection
+            overflow: visible
+            justify-content: space-between
+            .thirdSection_wrap
+                display: flex
+                justify-content: space-between
+                position: relative
+                .thirdContent
+                    .thirdTitle
+                        font-size: 73px
+                        font-weight: 400
+                        margin-top: 155px
+                        width: 605px
+                        margin-bottom: 33px
+                        letter-spacing: -2.3px
+                        line-height: 1.1
+                        span
+                            color: #F7B500
+                    .thirdText
+                        width: 530px
+                        font-size: 23px
+                        letter-spacing: -0.5px
+                    .thirdButton
+                        text-decoration: none
+                        background: #1F1E31
+                        display: block
+                        width: 150px
+                        border-radius: 31px
+                        font-size: 18px
+                        color: #ffffff
+                        padding-top: 19px
+                        padding-left: 26px
+                        padding-bottom: 19px
+                        margin-top: 33px
+                        transition: 0.2s
+                        margin-bottom: 266px
+                        &:hover
+                            background: #67D4F7
+                    .thirdButton2
+                        opacity: 0
+                        text-decoration: none
+                        position: relative
+                        display: block
+                        width: 62px
+                        height: 62px
+                        color: #ffffff
+                        font-size: 18px
+                        overflow: hidden
+                        transition: width 0.2s ease
+                        span
+                            opacity: 0
+                            height: 19px
+                            display: block
+                            position: absolute
+                            width: 242px
+                        &::after
+                            content: "+"
+                            display: block
+                            padding: 13px 23.5px
+                            background: #1F1E31
+                            position: absolute
+                            border-radius: 50%
+                            font-size: 26px
+                            color: #ffffff
+                        &:hover
+                            width: 215px
+                            background: #67D4F7
+                            border-radius: 31px
+                            padding-top: 18px
+                            padding-left: 26px
+                            padding-bottom: 25px
+                            height: 19px
+                        &:hover span
+                            opacity: 1
+                        &:hover::after
+                            padding: 4.5px 15px
+                            background: #ffffff
+                            color: #67d4f7
+                            top: 8px
+                            left: 187px
+                .thirdImgs
+                    position: absolute
+                    top: 80px
+                    left: 530px
+                    #pic20
+                        position: relative
+                        top: 318px
+                        left: 180px
+                        z-index: 1
+                        animation: pic3 4s infinite linear
+                    #pic21
+                        position: relative
+                        top: 254px
+                        left: 569px
+                        z-index: 2
+                        animation: pic4 7s infinite linear
+                    #pic22
+                        position: relative
+                        top: 256px
+                        z-index: 1
+                        left: 110px
+                        animation: pic6 6s infinite linear
+                    #pic23
+                        position: relative
+                        top: 150px
+                        left: 342px
+                        animation: pic2 5s infinite linear
+                    #pic24
+                        position: relative
+                        top: 168px
+                        left: -195px
+                        z-index: 1
+                        animation: pic7 15s infinite linear
+                    #pic25
+                        position: relative
+                        top: 65px
+                        left: -70px
+                        animation: pic1 8s infinite linear
+                    #pic26
+                        position: relative
+                        top: 168px
+                        left: 200px
+                        animation: pic3 10s infinite linear
+                    #pic27
+                        position: relative
+                        top: -310px
+                        left: 135px
+                        animation: pic8 9s infinite linear
+                    #pic28
+                        position: relative
+                        top: -390px
+                        left: -240px
+                        animation: pic7 6s infinite linear
+                    #pic29
+                        position: relative
+                        top: -310px
+                        left: -50px
+                        animation: pic6 4s infinite linear
+                    #pic30
+                        position: relative
+                        top: -355px
+                        left: 230px
+                        animation: pic1 12s infinite linear
+                    #pic31
+                        position: relative
+                        top: -459px
+                        left: 200px
+                        animation: pic4 9s infinite linear
+                    #pic32
+                        position: relative
+                        top: -470px
+                        left: 410px
+                        animation: pic2 5s infinite linear
+                    #pic33
+                        position: relative
+                        top: -392px
+                        left: 85px
+                        animation: pic1 7s infinite linear
+                    #pic34
+                        position: relative
+                        top: -285px
+                        left: 475px
+                        animation: pic8 12s infinite linear
+        .fourthSection
+            height: auto!important
+            overflow: visible
+            .fourthSection_wrap
+                padding-top: 150px
+                min-width: 100%
+                .fourthTitle  
+                    font-size: 45px
+                    font-weight: 400
+                    letter-spacing: -0.7px
+                .fourthTitle1
+                    margin-bottom: 66px
+                    margin-top: 0
+                .meeting_wrap
+                    display: flex
+                    height: 369px
+                    .meeting_img-wrap
+                        height: 100%
+                        overflow: hidden
+                        .meeting_img
+                            display: block
+                            height: 100%
+                            width: 100%
+                            img
+                                height: 100%
+                                transition: 0.3s
+                                &:hover
+                                    transform: scale(1.1)
+                    .desc_wrap
+                        margin-left: 58px
+                        margin-right: 59px
+                        h3
+                            margin-top: 24px
+                            font-size: 34px
+                            letter-spacing: -0.4px
+                            margin-bottom: 29px
+                        p
+                            font-size: 19px
+                            letter-spacing: -0.3px
+                            width: 642px
+                            line-height: 1.6
+                            margin-bottom: 57px
+                        .desc_buttons
+                            display: flex
+                            justify-content: space-between
+                            align-items: center
+                            .desc_button
+                                text-decoration: none
+                                background: #1F1E31
+                                display: block
+                                width: 140px
+                                border-radius: 31px
+                                font-size: 18px
+                                color: #ffffff
+                                padding-top: 19px
+                                padding-left: 36px
+                                padding-bottom: 19px
+                                transition: 0.2s
+                                &:hover
+                                    background: #67D4F7
+                            .desc_link
+                                font-size: 18px
+                                color: inherit
+                                font-weight: 700
+                                letter-spacing: -0.4px
+                                transition: 0.2s
+                                position: relative
+                                &:hover
+                                    color: #67D4F7
+                                &::after
+                                    content: url(../img/arrow.png)
+                                    position: absolute
+                                    left: 125px
+                                    opacity: 0
+                                    transition: 0.2s
+                                &:hover::after
+                                    opacity: 1
+                    .vertical
+                        height: 100%
+                        width: 2px
+                        background: #D8D8D8
+                    .adress
+                        margin-left: 59px
+                        p
+                            margin-top: 34px
+                            letter-spacing: -0.3px
+                            font-size: 23px
+                            &:nth-of-type(2)
+                                margin-top: 67px
+                                margin-bottom: 58px
+                            span
+                                font-weight: 700
+                                letter-spacing: -0.7px
+                        a
+                            font-weight: 700
+                            font-size: 18px
+                            letter-spacing: -0.5px
+                            color: inherit
+                            transition: 0.2s
+                            position: relative
+                            &:hover
+                                color: #67D4F7
+                            &::after
+                                content: url(../img/arrow.png)
+                                position: absolute
+                                left: 225px
+                                top: -0.5px
+                                opacity: 0
+                                transition: 0.2s
+                            &:hover::after
+                                opacity: 1
+                .fourthTitle2
+                    margin-top: 96px
+                    margin-bottom: 21px
+                form
+                    input[type="text"], input[type="email"]
+                        width: 450px
+                        height: 67px
+                        border: none
+                        border-radius: 32px
+                        margin-bottom: 14px
+                        font-family: 'Open Sans', sans-serif
+                        font-size: 23px
+                        color: #1F1E31
+                        outline: none
+                        padding: 0 30px
+                        background: #ffffff
+                    input::-webkit-input-placeholder
+                        font-family: 'Open Sans', sans-serif
+                        font: inherit
+                        font-size: 23px
+                        font-weight: 400
+                        color: #cccccc
+                    input::-moz-placeholder
+                        font-family: 'Open Sans', sans-serif
+                        font: inherit
+                        font-size: 23px
+                        font-weight: 400
+                        color: #cccccc
+                    textarea::-webkit-input-placeholder
+                        font-family: 'Open Sans', sans-serif
+                        font: inherit
+                        font-size: 23px
+                        font-weight: 400
+                        color: #cccccc
+                    textarea::-moz-placeholder
+                        font-family: 'Open Sans', sans-serif
+                        font: inherit
+                        font-size: 23px
+                        font-weight: 400
+                        color: #cccccc
+                    textarea
+                        width: 450px
+                        height: 156px
+                        background: #ffffff
+                        border: none
+                        border-radius: 32px
+                        padding: 30px 30px
+                        resize: none
+                        outline: none
+                        font-family: 'Open Sans', sans-serif
+                        font-size: 23px
+                        color: #1F1E31
+                        margin-bottom: 27px
+                .fourthButton_wrap
+                    display: flex
+                    justify-content: space-between
+                    margin-bottom: 54px
+                    .fourthButton
+                        text-decoration: none
+                        position: relative
+                        display: block
+                        width: 62px
+                        height: 62px
+                        color: #ffffff
+                        font-size: 18px
+                        overflow: hidden
+                        transition: width 0.2s ease
+                        span
+                            opacity: 0
+                            height: 19px
+                            display: block
+                            position: absolute
+                            width: 242px
+                        &::after
+                            content: url(../img/mess1.png)
+                            display: block
+                            padding: 13px 20px 13px 23px
+                            background: #1F1E31
+                            position: absolute
+                            border-radius: 50%
+                            font-size: 26px
+                        &:hover
+                            border-radius: 31px
+                            padding-top: 18px
+                            padding-left: 26px
+                            padding-bottom: 25px
+                            height: auto
+                            width: 198px
+                            background: #67D4F7
+                        &:hover span
+                            opacity: 1
+                        &:hover::after
+                            content: url(../img/mess.png)
+                            padding: 4.5px 11.5px 4.5px 14.5px
+                            background: #ffffff
+                            color: #67d4f7
+                            top: 8px
+                            left: 169px
+                    .btn_rdy
+                        border-radius: 31px
+                        padding-top: 18px
+                        padding-left: 26px
+                        padding-bottom: 25px
+                        height: auto
+                        width: 198px
+                        background: #1F1E31
+                        span
+                            opacity: 1
+                        &::after
+                            padding: 4.5px 11.5px 4.5px 14.5px
+                            top: 8px
+                            left: 169px
+                    .btnUp
+                        width: 58px
+                        height: 58px
+                        border-radius: 50%
+                        border: 2px solid #1F1E31
+                        position: relative
+                        transition: 0.2s
+                        cursor: pointer
+                        &:hover
+                            background: #1F1E31
+                        &::after
+                            content: url(../img/arr_black.png)
+                            display: block
+                            position: absolute
+                            top: 15px
+                            left: 25px
+                            transition: 0.2s
+                        &:hover::after
+                            content: url(../img/arr_white.png)
+                hr
+                    width: 100%
+                    height: 2px
+                    background: #D8D8D8
+                    border: none
+                    margin-bottom: 64px
+                .footer
+                    
+                    .footer_wrap
+                        display: flex
+                        justify-content: space-between
+                        .footer_adress
+                            display: flex
+                            justify-content: space-between
+                            width: 618px
+                            p
+                                font-size: 18px
+                                margin: 0
+                                letter-spacing: -0.3px
+                                span
+                                    font-size: 23px
+                                    font-weight: 700
+                        .social
+                            display: flex
+                            .social_icon
+                                width: 62px
+                                height: 62px
+                                border-radius: 50%
+                                background: #1F1E31
+                                display: flex
+                                justify-content: center
+                                align-items: center
+                                transition: 0.2s
+                                &:hover
+                                    background: #67D4F7
+                                &:nth-of-type(2)
+                                    margin-left: 25px
+                                    margin-right: 25px
+                    .footer_line
+                        width: 100%
+                        height: 16px
+                        background: #1F1E31
+                        margin-top: 90px
+.publishing, .aboutUs, .contacts
+    background: #fff
+    .headerPublishing, .header_aboutUs, .header_contacts
+        background: none
+        position: unset
+    .topPic
+        background: url(../img/publishing.png) center center
+        height: 577px
+        .topWrap
+            max-width: 1344px
+            margin: 0 auto
+            h1
+                font-size: 48px
+                width: 510px
+                margin: 0 auto
+                font-weight: 600
+                letter-spacing: -0.9px
+                height: 50px
+                line-height: 0.7
+                margin-top: 119px
+                margin-bottom: 20px
+            p
+                width: 624px
+                margin: 0 auto
+                text-align: center
+                letter-spacing: -0.5px
+            .firstButton
+                text-decoration: none
+                display: block
+                width: 215px
+                background: #1F1E31 0% 0% no-repeat padding-box
+                font-size: 18px
+                color: #ffffff
+                border-radius: 31px
+                padding-top: 18px
+                padding-left: 26px
+                padding-bottom: 25px
+                position: relative
+                margin-top: 68px
+                margin-left: auto
+                margin-right: auto
+                transition: 0.2s
+                span
+                    display: block
+                    height: 19px
+                &::after
+                    content: "+"
+                    display: block
+                    padding: 4.5px 15px
+                    background: #1F1E31
+                    position: absolute
+                    border-radius: 50%
+                    font-size: 26px
+                    top: 8px
+                    left: 187px
+                    transition: 0.2s
+                &:hover
+                    background: #67d4f7
+                &:hover::after
+                    background: #ffffff
+                    color: #67d4f7
+    .publishingWrap
+        max-width: 1344px
+        margin: 0 auto
+        .publishingText
+            width: 875px
+            margin: 0 auto
+            margin-top: 60px
+            text-align: center
+            letter-spacing: -0.5px
+        .publishingOffer_wrap
+            max-width: 681px
+            margin: 0 auto
+            display: flex
+            justify-content: space-between
+            margin-top: 74px
+            .publishingOffer
+                width: 198px
+                img
+                    margin: 0 auto
+                    display: block
+                p
+                    font-weight: 600
+                    text-align: center
+                    letter-spacing: -0.5px
+                    margin-top: 28px
+                    margin-bottom: 0
+                &:nth-of-type(1)
+                    width: 122px
+                &:nth-of-type(2)
+                    width: 184px
+                    position: relative
+                    left: 18px
+        h2
+            font-size: 45px
+            margin: 0 auto
+            font-weight: 400
+            width: 571px
+            letter-spacing: -0.5px
+            margin-top: 70px
+        .publishingText2
+            width: 710px
+            margin: 0 auto
+            margin-top: 20px
+            text-align: center
+            letter-spacing: -0.5px
+        .stepsWrap
+            display: flex
+            max-width: 1000px
+            justify-content: space-between
+            margin: 0 auto
+            .step_wrap
+                display: flex
+                position: relative
+                img
+                    position: absolute
+                    top: 60px
+                    left: -60px
+                    z-index: -1
+                .step
+                    width: 352px
+                    h3
+                        margin-top: 103px
+                        margin-bottom: 0
+                        font-size: 34px
+                        letter-spacing: -1.2px
+                    p
+                        margin-top: 6px
+                        margin-bottom: 0
+            .firstStep_wrap
+                img
+                    width: 44px
+                    height: 116px
+                    
+                .firstStep
+            .secondStep_wrap
+                img
+                    width: 80px
+                    height: 118px
+                .secondStep
+            .thirdStep_wrap
+                img
+                    width: 82px
+                    height: 120px
+                .thirdStep
+            .fourthStep_wrap
+                img
+                    width: 90px
+                    height: 116px
+                .fourthStep
+        .firstButton
+            text-decoration: none
+            display: block
+            width: 215px
+            background: #1F1E31 0% 0% no-repeat padding-box
+            font-size: 18px
+            color: #ffffff
+            border-radius: 31px
+            padding-top: 18px
+            padding-left: 26px
+            padding-bottom: 25px
+            position: relative
+            margin-top: 61px
+            margin-left: auto
+            margin-right: auto
+            margin-bottom: 67px
+            transition: 0.2s
+            span
+                display: block
+                height: 19px
+            &::after
+                content: "+"
+                display: block
+                padding: 4.5px 15px
+                background: #1F1E31
+                position: absolute
+                border-radius: 50%
+                font-size: 26px
+                top: 8px
+                left: 187px
+                transition: 0.2s
+            &:hover
+                background: #67d4f7
+            &:hover::after
+                background: #ffffff
+                color: #67d4f7
+    .footerPublishing
+        background: #F2F2F2
+        padding-bottom: 29px
+        .footerPublishing_wrap
+            max-width: 1344px
+            margin: 0 auto
+            padding-top: 34px
+            h3
+                font-size: 45px
+                font-weight: 400
+                margin: 0
+            .footer_desc
+                display: flex
+                margin-top: 37px
+                p
+                    margin: 0
+                    width: 679px
+                    letter-spacing: -0.5px
+                div
+                    img
+                        position: relative
+                    .game1
+                        top: -100px
+                        left: 135px
+                    .game2
+                        left: 75px
+                        top: 70px
+                        z-index: 2
+                    .game3
+                        left: 50px
+                    .game4
+                        top: 135px
+                        left: -30px
+                    .game5
+                        top: -90px
+                        left: -30px
+            .fourthButton_wrap
+                display: flex
+                justify-content: space-between
+                margin-bottom: 54px
+                margin-top: 48px
+                .download
+                    display: flex
+                    align-items: center
+                    .appStore
+                        width: 120px
+                        height: 40px
+                        background: url(../img/App_Store.png)
+                        cursor: pointer
+                    .googlePlay
+                        width: 135px
+                        height: 40px
+                        background: url(../img/google-play.png) center center
+                        cursor: pointer
+                        margin-left: 55px
+                .btnUp
+                    width: 58px
+                    height: 58px
+                    border-radius: 50%
+                    border: 2px solid #1F1E31
+                    position: relative
+                    transition: 0.2s
+                    cursor: pointer
+                    &:hover
+                        background: #1F1E31
+                    &::after
+                        content: url(../img/arr_black.png)
+                        display: block
+                        position: absolute
+                        top: 15px
+                        left: 25px
+                        transition: 0.2s
+                    &:hover::after
+                        content: url(../img/arr_white.png)
+            hr
+                width: 100%
+                height: 2px
+                background: #D8D8D8
+                border: none
+                margin-bottom: 64px
+            .footer_contacts
+                display: flex
+                justify-content: space-between
+                .footer_adress
+                    display: flex
+                    justify-content: space-between
+                    width: 618px
+                    p
+                        font-size: 18px
+                        margin: 0
+                        letter-spacing: -0.3px
+                        span
+                            font-size: 23px
+                            font-weight: 700
+                .social
+                    display: flex
+                    .social_icon
+                        width: 62px
+                        height: 62px
+                        border-radius: 50%
+                        background: #1F1E31
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        transition: 0.2s
+                        &:hover
+                            background: #67D4F7
+                        &:nth-of-type(2)
+                            margin-left: 25px
+                            margin-right: 25px
+    .pub
+        margin-top: 0
+.aboutUs
+    .topPic
+        background: url(../img/aboutUs.png) center center
+        height: 570px
+        .topWrap 
+            h1
+                width: 560px
+                text-align: center
+                height: auto
+                line-height: 1
+                margin-top: 105px
+                margin-bottom: 23px
+            .firstButton
+                margin-top: 37px
+    .aboutUs_wrap
+        overflow: hidden
+        max-width: 1344px
+        margin: 0 auto
+        .aboutUs_text
+            letter-spacing: -0.5px
+        .aboutUs_text1
+            margin-bottom: 34px
+            margin-top: 50px
+        .aboutUs_text2
+            margin-bottom: 57px
+        .mediaBuyingTeam
+            display: flex
+            justify-content: space-between
+            .mediaBuyingTeam_content
+                transition: 0.8s
+                opacity: 0
+                transform: translateY(200px)
+                width: 535px
+                h2
+                    font-size: 45px
+                    font-weight: 400
+                    letter-spacing: -0.9px
+                    margin-top: 68px
+                    margin-bottom: 46px
+                .mediaBuyingTeam_content-text
+                    letter-spacing: -0.5px
+                .mediaBuyingTeam_content-text1
+                    margin-bottom: 34px
+                .secondButton
+                    text-decoration: none
+                    background: #1F1E31
+                    display: block
+                    width: 135px
+                    border-radius: 31px
+                    font-size: 18px
+                    color: #ffffff
+                    padding-top: 19px
+                    padding-left: 41px
+                    padding-bottom: 19px
+                    margin-top: 59px
+                    transition: 0.2s
+                    margin-bottom: 30px
+                    &:hover
+                        background: #67D4F7
+            .mediaBuyingTeam_pic
+                transition: 0.8s
+                opacity: 0
+                transform: translateY(100px)
+                height: 583px
+        .aboutUs_Krylov
+            position: relative
+            display: flex
+            justify-content: space-between
+            margin-bottom: 43px
+            .aboutUs_Krylov-text
+                width: 360px
+                color: #67D4F7
+                font-weight: 600
+                font-size: 34px
+                letter-spacing: -0.5px
+                margin-top: 17px
+                margin-bottom: 0
+                transition: 0.8s
+                opacity: 0
+                transform: translateY(100px)
+            .aboutUs_Krylov-pic
+                position: absolute
+                top: -64px
+                transition: 0.8s
+                opacity: 0
+                transform: translateY(100px)
+            .aboutUs_Krylov-wrap
+                z-index: 2
+                position: absolute
+                transition: 0.8s
+                opacity: 0
+                transform: translateX(100px)
+                h3
+                    font-size: 34px
+                    margin-top: 27px
+                    margin-bottom: 7px
+                    letter-spacing: -1px
+                p
+                    width: 269px
+                    letter-spacing: -0.5px
+                    margin-top: 0
+                    margin-bottom: 47px
+                .social
+                    display: flex
+                    justify-content: flex-end
+                    .social_icon
+                        width: 62px
+                        height: 62px
+                        border-radius: 50%
+                        background: #1F1E31
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        transition: 0.2s
+                        &:hover
+                            background: #67D4F7
+                        &:first-of-type
+                            margin-right: 25px
+    .footerAboutUs
+        background: #F2F2F2
+        .footerAboutUs_wrap
+            max-width: 1344px
+            margin: 0 auto
+            .programmatic
+                display: flex
+                justify-content: space-between
+                padding-top: 62px
+                .programmatic_content-wrap
+                    h3
+                        margin-top: 0
+                        margin-bottom: 55px
+                        font-size: 45px
+                        font-weight: 400
+                        letter-spacing: -1px
+                    .programmatic-text
+                        display: flex
+                        &:first-of-type
+                            margin-bottom: 50px
+                        &:nth-of-type(2)
+                            margin-bottom: 47px
+                        img
+                            width: 55px
+                            height: 55px
+                            margin-right: 50px
+                        p
+                            margin: 0
+                            width: 498px
+                            letter-spacing: -0.5px
+            .fourthButton_wrap
+                display: flex
+                justify-content: space-between
+                margin-bottom: 54px
+                margin-top: 66px
+                .secondButton
+                    text-decoration: none
+                    background: #1F1E31
+                    display: block
+                    width: 135px
+                    border-radius: 31px
+                    font-size: 18px
+                    color: #ffffff
+                    padding-top: 19px
+                    padding-left: 41px
+                    padding-bottom: 19px
+                    transition: 0.2s
+                    &:hover
+                        background: #67D4F7
+                .btnUp
+                    width: 58px
+                    height: 58px
+                    border-radius: 50%
+                    border: 2px solid #1F1E31
+                    position: relative
+                    transition: 0.2s
+                    cursor: pointer
+                    &:hover
+                        background: #1F1E31
+                    &::after
+                        content: url(../img/arr_black.png)
+                        display: block
+                        position: absolute
+                        top: 15px
+                        left: 25px
+                        transition: 0.2s
+                    &:hover::after
+                        content: url(../img/arr_white.png)
+            hr
+                width: 100%
+                height: 2px
+                background: #D8D8D8
+                border: none
+                margin-bottom: 64px
+            .footer_contacts
+                display: flex
+                justify-content: space-between
+                padding-bottom: 30px
+                .footer_adress
+                    display: flex
+                    justify-content: space-between
+                    width: 618px
+                    p
+                        font-size: 18px
+                        margin: 0
+                        letter-spacing: -0.3px
+                        span
+                            font-size: 23px
+                            font-weight: 700
+                .social
+                    display: flex
+                    .social_icon
+                        width: 62px
+                        height: 62px
+                        border-radius: 50%
+                        background: #1F1E31
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        transition: 0.2s
+                        &:hover
+                            background: #67D4F7
+                        &:nth-of-type(2)
+                            margin-left: 25px
+                            margin-right: 25px
+.contacts
+    .topPic
+        background: unset
+        height: auto
+        .topWrap
+            max-width: 1090px
+            height: 605px
+            position: relative
+            .loc
+                position: absolute
+                background: url(../img/Location.png)
+                height: 23px
+                width: 19px
+                transition: 0.1s
+                cursor: pointer
+                &:hover
+                    width: 246px
+                    height: 124px
+                    background: url(../img/loc.png)
+            #loc1
+                top: 330px
+                left: 484px
+                &:hover
+                    top: 230px
+                    left: 371px
+            #loc2
+                top: 220px
+                left: 590px
+                &:hover
+                    top: 120px
+                    left: 477px
+            #loc3
+                top: 282px
+                left: 644px
+                &:hover
+                    top: 182px
+                    left: 531px
+            #loc4
+                top: 220px
+                left: 901px
+                &:hover
+                    top: 120px
+                    left: 788px
+    .contacts_wrap
+        // width: 100%
+        max-width: 1364px
+        margin: 0 auto
+        h1
+            font-size: 45px
+            font-weight: 400
+            margin: 0
+            margin-left: 20px
+            margin-bottom: 33px
+            line-height: 1
+            position: relative
+            top: -30px
+        .meeting_wrap
+            display: flex
+            height: 369px
+            margin-bottom: 89px
+            .meeting_img-wrap
+                height: 100%
+                overflow: hidden
+                .meeting_img
+                    display: block
+                    height: 100%
+                    width: 100%
+                    img
+                        height: 100%
+                        transition: 0.3s
+                        &:hover
+                            transform: scale(1.1)
+            .desc_wrap
+                margin-left: 58px
+                margin-right: 59px
+                h3
+                    margin-top: 24px
+                    font-size: 34px
+                    letter-spacing: -0.4px
+                    margin-bottom: 29px
+                p
+                    font-size: 19px
+                    letter-spacing: -0.3px
+                    width: 625px
+                    line-height: 1.6
+                    margin-bottom: 58px
+                .desc_buttons
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    .desc_button
+                        text-decoration: none
+                        background: #1F1E31
+                        display: block
+                        width: 140px
+                        border-radius: 31px
+                        font-size: 18px
+                        color: #ffffff
+                        padding-top: 19px
+                        padding-left: 36px
+                        padding-bottom: 19px
+                        transition: 0.2s
+                        &:hover
+                            background: #67D4F7
+            .vertical
+                height: 100%
+                width: 2px
+                background: #D8D8D8
+            .adress
+                margin-left: 20px
+                .time
+                    display: flex
+                    p
+                        margin: 0
+                        letter-spacing: -0.3px
+                        font-size: 23px
+                        font-weight: 700
+                    img
+                        position: relative
+                        top: 5px
+                        margin-right: 15px
+                .time1
+                    margin-top: 40px
+                    margin-bottom: 45px
+                .time2
+                    margin-bottom: 32px
+                    img
+                        margin-right: 18px
+                a
+                    font-weight: 700
+                    font-size: 18px
+                    letter-spacing: -0.5px
+                    color: inherit
+                    transition: 0.2s
+                    position: relative
+                    margin-left: 40px
+                    &:hover
+                        color: #67D4F7
+                    &::after
+                        content: url(../img/arrow.png)
+                        position: absolute
+                        left: 225px
+                        top: -0.5px
+                        opacity: 0
+                        transition: 0.25s
+                    &:hover::after
+                        opacity: 1
+    .footerContacts
+        background: #F2F2F2
+        .footerContacts_wrap
+            max-width: 1344px
+            margin: 0 auto
+            padding-top: 16px
+            .fourthTitle2
+                font-size: 45px
+                font-weight: 400
+                letter-spacing: -0.7px
+                margin-bottom: 21px
+            form
+                input[type="text"], input[type="email"]
+                    width: 450px
+                    height: 67px
+                    border: none
+                    border-radius: 32px
+                    margin-bottom: 14px
+                    font-family: 'Open Sans', sans-serif
+                    font-size: 23px
+                    color: #1F1E31
+                    outline: none
+                    padding: 0 30px
+                    background: #ffffff
+                input::-webkit-input-placeholder
+                    font-family: 'Open Sans', sans-serif
+                    font: inherit
+                    font-size: 23px
+                    font-weight: 400
+                    color: #cccccc
+                input::-moz-placeholder
+                    font-family: 'Open Sans', sans-serif
+                    font: inherit
+                    font-size: 23px
+                    font-weight: 400
+                    color: #cccccc
+                textarea::-webkit-input-placeholder
+                    font-family: 'Open Sans', sans-serif
+                    font: inherit
+                    font-size: 23px
+                    font-weight: 400
+                    color: #cccccc
+                textarea::-moz-placeholder
+                    font-family: 'Open Sans', sans-serif
+                    font: inherit
+                    font-size: 23px
+                    font-weight: 400
+                    color: #cccccc
+                textarea
+                    width: 450px
+                    height: 156px
+                    background: #ffffff
+                    border: none
+                    border-radius: 32px
+                    padding: 30px 30px
+                    resize: none
+                    outline: none
+                    font-family: 'Open Sans', sans-serif
+                    font-size: 23px
+                    color: #1F1E31
+                    margin-bottom: 27px
+            .fourthButton_wrap
+                display: flex
+                justify-content: space-between
+                margin-bottom: 54px
+                .fourthButton
+                    text-decoration: none
+                    position: relative
+                    display: block
+                    width: 62px
+                    height: 62px
+                    color: #ffffff
+                    font-size: 18px
+                    overflow: hidden
+                    transition: width 0.2s ease
+                    span
+                        opacity: 0
+                        height: 19px
+                        display: block
+                        position: absolute
+                        width: 242px
+                    &::after
+                        content: url(../img/mess1.png)
+                        display: block
+                        padding: 13px 20px 13px 23px
+                        background: #1F1E31
+                        position: absolute
+                        border-radius: 50%
+                        font-size: 26px
+                    &:hover
+                        border-radius: 31px
+                        padding-top: 18px
+                        padding-left: 26px
+                        padding-bottom: 25px
+                        height: auto
+                        width: 198px
+                        background: #67D4F7
+                    &:hover span
+                        opacity: 1
+                    &:hover::after
+                        content: url(../img/mess.png)
+                        padding: 4.5px 11.5px 4.5px 14.5px
+                        background: #ffffff
+                        color: #67d4f7
+                        top: 8px
+                        left: 169px
+                .btn_rdy
+                    border-radius: 31px
+                    padding-top: 18px
+                    padding-left: 26px
+                    padding-bottom: 25px
+                    height: auto
+                    width: 198px
+                    background: #1F1E31
+                    span
+                        opacity: 1
+                    &::after
+                        padding: 4.5px 11.5px 4.5px 14.5px
+                        top: 8px
+                        left: 169px
+                .btnUp
+                    width: 58px
+                    height: 58px
+                    border-radius: 50%
+                    border: 2px solid #1F1E31
+                    position: relative
+                    transition: 0.2s
+                    cursor: pointer
+                    &:hover
+                        background: #1F1E31
+                    &::after
+                        content: url(../img/arr_black.png)
+                        display: block
+                        position: absolute
+                        top: 15px
+                        left: 25px
+                        transition: 0.2s
+                    &:hover::after
+                        content: url(../img/arr_white.png)
+            hr
+                width: 100%
+                height: 2px
+                background: #D8D8D8
+                border: none
+                margin-bottom: 64px
+            .footer_contacts
+                display: flex
+                justify-content: space-between
+                padding-bottom: 30px
+                .footer_adress
+                    display: flex
+                    justify-content: space-between
+                    width: 618px
+                    p
+                        font-size: 18px
+                        margin: 0
+                        letter-spacing: -0.3px
+                        span
+                            font-size: 23px
+                            font-weight: 700
+                .social
+                    display: flex
+                    .social_icon
+                        width: 62px
+                        height: 62px
+                        border-radius: 50%
+                        background: #1F1E31
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        transition: 0.2s
+                        &:hover
+                            background: #67D4F7
+                        &:nth-of-type(2)
+                            margin-left: 25px
+                            margin-right: 25px
+@keyframes scroll
+    0%
+        transform: translateY(0px)
+    10%
+        transform: translateY(70px)
+    15%
+        transform: translateX(10px)
+    15.1%
+        transform: translateY(-70px)
+    33%
+        transform: translateY(0px)
+    100%
+        transform: translateY(0px)
+@keyframes scrollOpacity
+    0%
+        opacity: 0
+    50%
+        opacity: 0
+    100%
+        opacity: 1
+@keyframes btn
+    0%
+        opacity: 0
+    50%
+        opacity: 0
+    100%
+        opacity: 1
+@keyframes links
+    0%
+        width: 0%
+        transform: translateY(0px)
+    20%
+        width: 55%
+        transform: translateX(0%)
+    40%
+        width: 55%
+        transform: translateX(50%)
+    62%
+        width: 55%
+        transform: translateX(200%)
+    63%
+        width: 55%
+        transform: translateY(100px)
+    64%
+        width: 55%
+        transform: translateX(-300%)
+    65%
+        width: 0%
+        transform: translateY(0px)
+    100%
+        width: 55%
+        transform: translateX(0%)
+@keyframes pic2
+    0%
+        transform: translateY(0px)
+    50%
+        transform: translateY(-40px)
+    100%
+        transform: translateY(0px)
+@keyframes pic1
+    0%
+        transform: translateY(0px)
+    50%
+        transform: translateY(40px)
+    100%
+        transform: translateY(0px)
+@keyframes pic4
+    0%
+        transform: translateY(0px)
+    50%
+        transform: translateY(-60px)
+    100%
+        transform: translateY(0px)
+@keyframes pic3
+    0%
+        transform: translateY(0px)
+    50%
+        transform: translateY(-20px)
+    100%
+        transform: translateY(0px)
+@keyframes pic6
+    0%
+        transform: translateY(0px)
+    50%
+        transform: translateY(40px)
+    100%
+        transform: translateY(0px)
+@keyframes pic7
+    0%
+        transform: translateY(0px)
+    50%
+        transform: translateY(-40px)
+    100%
+        transform: translateY(0px)
+@keyframes pic8
+    0%
+        transform: translateY(0px)
+    50%
+        transform: translateY(-50px)
+    100%
+        transform: translateY(0px)
+
+@media (min-width: 1451px) and (max-width: 1640px)
+    body
+        .container
+            .firstSection
+                .firstSection_wrap 
+                    .firstImgs
+                        left: -20px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        left: 530px
+@media (min-width: 1371px) and (max-width: 1450px)
+    body
+        .header 
+            .header_wrap
+                max-width: 1244px
+        .container
+            max-width: 1244px
+            .firstSection
+                .firstSection_wrap 
+                    .firstImgs
+                        transform: scale(0.75)
+            .secondSection 
+                overflow: visible
+                .secondSection_wrap
+                    .secondImgs
+                        left: 540px
+                        transform: scale(0.8)
+                        position: absolute
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        left: 430px
+                        transform: scale(0.8) translateX(100px)
+            .fourthSection
+                .fourthSection_wrap 
+                    .meeting_wrap 
+                        .desc_wrap
+                            margin-left: 15px
+                            margin-right: 25px
+                        .adress
+                            margin-left: 25px
+                    .fourthButton_wrap 
+                        .btnUp
+                            margin-right: 10px
+    .publishing
+        .topPic 
+            .topWrap
+                max-width: 1244px
+        .publishingWrap
+            max-width: 1244px
+        .footerPublishing
+            .footerPublishing_wrap
+                max-width: 1244px
+    .aboutUs
+        .aboutUs_wrap
+            max-width: 1244px
+        .footerAboutUs 
+            .footerAboutUs_wrap
+                max-width: 1244px
+    .contacts
+        .contacts_wrap
+            max-width: 1244px
+            .meeting_wrap 
+                .desc_wrap
+                    margin-left: 30px
+                    margin-right: 35px
+                    h3
+                        font-size: 32px
+                    p
+                        font-size: 18px
+                        width: 590px
+                    .adress
+                        margin-left: 35px
+        .footerContacts
+            .footerContacts_wrap
+                max-width: 1244px
+@media (min-width: 1301px) and (max-width: 1370px)
+    body
+        .header
+            padding-top: 10px
+            .header_wrap
+                max-width: 1200px
+        .container
+            max-width: 1200px
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: -40px
+                        transform: scale(0.75)
+            .secondSection 
+                .secondSection_wrap
+                    .secondContent 
+                        .secondTitle
+                            width: 595px
+                    .secondImgs
+                        left: 490px
+                        transform: scale(0.8)
+                        position: absolute
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        left: 360px
+                        transform: scale(0.8) translateX(100px)
+            .fourthSection
+                .fourthSection_wrap 
+                    .meeting_wrap 
+                        .desc_wrap
+                            margin-left: 30px
+                            margin-right: 30px
+                            h3
+                                font-size: 32px
+                            p
+                                font-size: 17px
+                                width: 555px
+                        .adress
+                            margin-left: 30px
+                            p
+                                font-size: 19px
+                                &:nth-of-type(2)
+                                    margin-bottom: 68px
+                            a
+                                font-size: 17px
+                    .fourthButton_wrap 
+                        .btnUp
+                            margin-right: 25px
+    .publishing
+        .topPic 
+            .topWrap
+                max-width: 1200px
+        .publishingWrap
+            max-width: 1200px
+        .footerPublishing
+            .footerPublishing_wrap
+                max-width: 1200px
+                .footer_desc 
+                    p
+                        font-size: 22px
+                        width: 635px
+    .aboutUs
+        .aboutUs_wrap
+            max-width: 1200px
+        .footerAboutUs 
+            .footerAboutUs_wrap
+                max-width: 1200px
+    .contacts
+        .contacts_wrap
+            max-width: 1200px
+            .meeting_wrap 
+                .desc_wrap
+                    margin-left: 25px
+                    margin-right: 30px
+                    h3
+                        font-size: 32px
+                    p
+                        font-size: 18px
+                        width: 590px
+                .adress
+                    margin-left: 30px
+        .footerContacts
+            .footerContacts_wrap
+                max-width: 1200px
+@media (min-width:1171px) and (max-width: 1300px)
+    body
+        .header
+            padding-top: 7px
+            .header_wrap
+                max-width: 1150px
+        .container
+            max-width: 1150px
+            .firstSection 
+                .firstSection_wrap
+                    .firstContent 
+                        .firstTitle
+                            font-size: 63px
+                            width: 530px
+                        .firstText
+                            font-size: 21px
+                            width: 530px
+                    .firstImgs
+                        left: -75px
+                        transform: scale(0.75)
+            .secondSection
+                .secondSection_wrap 
+                    .secondContent 
+                        .secondTitle
+                            font-size: 63px
+                            width: 510px
+                        .secondText
+                            width: 510px
+                            font-size: 21px
+                        .offer 
+                            p
+                                font-size: 21px
+                    .secondImgs
+                        left: 410px
+                        transform: scale(0.8) translateX(-10px)
+                        position: absolute
+            .thirdSection 
+                .thirdSection_wrap
+                    .thirdContent
+                        .thirdTitle
+                            width: 490px
+                            font-size: 63px
+                        .thirdText
+                            width: 490px
+                            font-size: 21px
+                    .thirdImgs
+                        left: 310px
+                        transform: scale(0.8) translateX(70px)
+            .fourthSection
+                .fourthSection_wrap 
+                    .meeting_wrap
+                        transform: scale(0.95)
+                        position: relative
+                        left: -29px
+                        .desc_wrap
+                            margin-left: 30px
+                            margin-right: 30px
+                            h3
+                                font-size: 32px
+                            p
+                                font-size: 17px
+                                width: 555px
+                        .adress
+                            margin-left: 30px
+                            p
+                                font-size: 19px
+                                &:nth-of-type(2)
+                                    margin-bottom: 68px
+                            a
+                                font-size: 17px
+                    .fourthButton_wrap 
+                        .btnUp
+                            margin-right: 70px
+    .publishing
+        font-size: 21px
+        .topPic 
+            .topWrap
+                max-width: 1150px
+        .publishingWrap
+            max-width: 1150px
+            .stepsWrap
+                max-width: 950px
+        .footerPublishing
+            .footerPublishing_wrap
+                max-width: 1150px
+                .footer_desc
+                    position: relative
+                    p
+                        width: 605px
+                    div
+                        transform: scale(0.95)
+                        position: absolute
+                        left: 585px
+    .aboutUs
+        font-size: 21px
+        .aboutUs_wrap
+            max-width: 1150px
+            .aboutUs_Krylov 
+                .aboutUs_Krylov-text
+                    width: 305px
+                    font-size: 30px
+        .footerAboutUs 
+            .footerAboutUs_wrap
+                max-width: 1150px
+                .programmatic 
+                    .programmatic_content-wrap 
+                        .programmatic-text 
+                            img
+                                margin-right: 25px
+    .contacts
+        font-size: 21px
+        .contacts_wrap
+            max-width: 1150px
+            .meeting_wrap 
+                transform: scale(0.95)
+                position: relative
+                left: -29px
+                .desc_wrap
+                    margin-left: 10px
+                    margin-right: 0
+                    h3
+                        font-size: 32px
+                    p
+                        font-size: 17px
+                        width: 555px
+                .vertical
+                    margin: 0 17px
+                .adress
+                    margin-left: 0
+        .footerContacts
+            .footerContacts_wrap
+                max-width: 1150px
+@media (min-width: 1024px) and (max-width: 1170px)
+    body
+        .header
+            padding-top: 7px
+            .header_wrap
+                max-width: 950px
+        .container
+            max-width: 950px
+            .firstSection 
+                .firstSection_wrap
+                    .firstContent 
+                        .firstTitle
+                            font-size: 56px
+                            width: 410px
+                        .firstText
+                            font-size: 19px
+                            width: 410px
+                    .firstImgs
+                        left: -125px
+                        transform: scale(0.75)
+            .secondSection 
+                .secondSection_wrap
+                    position: relative
+                    .secondContent 
+                        .secondTitle
+                            width: 455px
+                            font-size: 56px
+                        .secondText
+                            font-size: 19px
+                            width: 455px
+                        .offer
+                            p
+                                font-size: 19px
+                    .secondImgs
+                        left: 240px
+                        transform: scale(0.8) translateX(-10px)
+                        position: absolute
+            .thirdSection 
+                .thirdSection_wrap
+                    .thirdContent
+                        .thirdTitle
+                            width: 435px
+                            font-size: 56px
+                        .thirdText
+                            width: 435px
+                            font-size: 19px
+                    .thirdImgs
+                        left: 140px
+                        transform: scale(0.75) translateX(100px)
+            .fourthSection
+                .fourthSection_wrap
+                    padding-top: 90px
+                    .fourthTitle1
+                        margin-bottom: 10px
+                    .meeting_wrap
+                        transform: scale(0.82)
+                        position: relative
+                        left: -85px
+                        .desc_wrap
+                            margin-left: 30px
+                            margin-right: 30px
+                            h3
+                                font-size: 32px
+                            p
+                                font-size: 17px
+                                width: 555px
+                        .adress
+                            margin-left: -165px
+                            position: relative
+                            left: 189px
+                            p
+                                font-size: 19px
+                                &:nth-of-type(2)
+                                    margin-bottom: 68px
+                            a
+                                font-size: 17px
+                    .fourthTitle2
+                        margin-top: 15px
+                    .fourthButton_wrap 
+                        .btnUp
+                            margin-right: 40px
+                    .footer
+                        .footer_adress
+                            width: 520px
+                        .social
+                            margin-right: 40px
+    .publishing
+        font-size: 19px
+        .topPic 
+            .topWrap
+                max-width: 950px
+        .publishingWrap
+            max-width: 950px
+            .stepsWrap
+                max-width: 750px
+                .step_wrap 
+                    .step
+                        width: 265px
+                        h3
+                            font-size: 27px
+        .footerPublishing
+            .footerPublishing_wrap
+                max-width: 950px
+                h3
+                    font-size: 38px
+                .footer_desc
+                    position: relative
+                    p
+                        width: 515px
+                        font-size: 18px
+                    div
+                        transform: scale(0.8)
+                        position: absolute
+                        left: 395px
+                .fourthButton_wrap
+                    margin-bottom: 40px
+                hr
+                    margin-bottom: 35px
+                .footer_contacts 
+                    .footer_adress
+                        width: 540px
+    .aboutUs
+        font-size: 19px
+        .aboutUs_wrap
+            max-width: 950px
+            .mediaBuyingTeam 
+                height: 437px
+                .mediaBuyingTeam_content
+                    width: 430px
+                    h2
+                        font-size: 38px
+                        margin-top: 0
+                    .secondButton
+                        margin-bottom: 0
+                        margin-top: 35px
+                .mediaBuyingTeam_pic
+                    img
+                        width: 400px
+            .aboutUs_Krylov 
+                .aboutUs_Krylov-text
+                    width: 290px
+                    font-size: 28px
+                .aboutUs_Krylov-pic
+                    width: 280px
+                .aboutUs_Krylov-wrap
+                    h3
+                        font-size: 28px
+                        margin-top: 0
+                    p
+                        margin-bottom: 30px
+        .footerAboutUs 
+            .footerAboutUs_wrap
+                max-width: 950px
+                .programmatic 
+                    .programmatic_content-wrap 
+                        .programmatic-text 
+                            img
+                                margin-right: 20px
+                            p
+                                width: 400px
+                    .programmatic_img-wrap
+                        img
+                            width: 448px
+                            position: relative
+                            top: 35px
+    .contacts
+        font-size: 19px
+        .topPic 
+            .topWrap
+                overflow: hidden
+                img
+                    position: relative
+                    left: -30px
+                #loc1
+                    left: 454px
+                    &:hover
+                        left: 341px
+                #loc2
+                    left: 560px
+                    &:hover
+                        left: 447px
+                #loc3
+                    left: 614px
+                    &:hover
+                        left: 501px
+                #loc4
+                    left: 871px
+                    &:hover
+                        left: 758px
+        .contacts_wrap
+            max-width: 950px
+            h1
+                margin-bottom: 0
+            .meeting_wrap 
+                transform: scale(0.82)
+                position: relative
+                left: -85px
+                margin-bottom: 0
+                .desc_wrap
+                    margin-left: 10px
+                    margin-right: 0
+                    h3
+                        font-size: 32px
+                    p
+                        font-size: 17px
+                        width: 555px
+                .vertical
+                    margin: 0 -85px
+                    position: relative
+                    left: 100px
+                .adress
+                    margin-left: 0
+                    position: relative
+                    left: 200px
+        .footerContacts
+            .footerContacts_wrap
+                max-width: 950px
+@media (orientation: landscape) and (max-height: 700px) and (min-height: 600px) and (min-width: 1300px) and (max-width: 1400px)
+    body
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: 15px
+@media (orientation: landscape) and (max-height: 700px) and (min-height: 600px) and (min-width: 1200px) and (max-width: 1299px)
+    body
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: -35px
+@media (orientation: landscape) and (max-height: 700px) and (min-height: 600px)
+    body
+        .container
+            .section
+                .title
+                    font-size: 52px!important
+                .text
+                    font-size: 18px!important
+            .firstSection 
+                .firstSection_wrap 
+                    .firstContent 
+                        .firstTitle
+                            width: 430px
+                            margin-top: 100px
+                        .firstText
+                            width: 430px
+                        .firstButton
+                            margin-top: 55px
+                    .firstImgs
+                        top: -90px
+            .secondSection
+                .secondSection_wrap 
+                    .secondContent 
+                        .secondTitle
+                            width: 420px
+                            margin-top: 100px
+                        .secondText
+                            margin-top: 18px
+                            margin-bottom: 25px
+                            width: 455px
+                        .offer 
+                            p
+                                font-size: 18px
+                        .offer1
+                            margin-bottom: 15px
+                        .offer2
+                            margin-bottom: 15px
+                        .secondButton
+                            margin-top: 25px
+                            margin-bottom: 20px
+                    .secondImgs
+                        top: -80px
+            .thirdSection 
+                .thirdSection_wrap
+                    .thirdContent
+                        .thirdTitle
+                            margin-top: 100px
+                            margin-bottom: 23px
+                            width: 430px
+                        .thirdText
+                            width: 430px
+                        .thirdButton
+                            margin-bottom: 70px
+                    .thirdImgs
+                        top: -20px
+            .fourthSection 
+                .fourthSection_wrap
+                    padding-top: 100px
+                    .fourthTitle1
+                        margin-bottom: 15px
+@media (orientation: landscape) and (max-height: 768px) and (min-height: 701px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        top: -80px
+            .secondSection
+                .secondSection_wrap 
+                    .secondContent 
+                        .secondTitle
+                            margin-top: 90px
+                        .secondText
+                            margin-top: 15px
+                            margin-bottom: 30px
+                        .offer1
+                            margin-bottom: 20px
+                        .offer2
+                            margin-bottom: 20px
+                        .secondButton
+                            margin-top: 40px
+                            margin-bottom: 55px
+                    .secondImgs
+                        top: -80px
+            .thirdSection 
+                .thirdSection_wrap
+                    .thirdContent
+                        .thirdButton
+                            margin-bottom: 115px
+                    .thirdImgs
+                        top: 0
+@media (orientation: landscape) and (max-height: 890px) and (min-height: 769px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        top: -60px
+            .secondSection
+                .secondSection_wrap 
+                    .secondContent 
+                        .secondTitle
+                            margin-top: 110px
+                        .secondText
+                            margin-top: 15px
+                            margin-bottom: 35px
+                        .offer1
+                            margin-bottom: 20px
+                        .offer2
+                            margin-bottom: 20px
+                        .secondButton
+                            margin-top: 50px
+                            margin-bottom: 75px
+                    .secondImgs
+                        top: -30px
+            .thirdSection 
+                .thirdSection_wrap
+                    .thirdContent
+                        .thirdButton
+                            margin-bottom: 130px
+                    .thirdImgs
+                        top: 40px
+@media (max-width: 1023px)
+    body
+        .header_active
+            height: 175px!important
+        .header
+            padding-top: 0
+            background: #ffffff!important
+            height: 54px
+            transition: 0.2s
+            position: fixed!important
+            .header_wrap
+                margin: 0 40px
+                height: 54px
+                .menu
+                    display: none
+                    top: 37px
+                    text-align: right
+                    div
+                        margin-right: 0!important
+                .logo
+                    width: 37px
+                    height: 41px
+                    background-position: center center
+                    background-size: cover
+                    &:hover
+                        width: 37px
+                        height: 41px
+                        background: url(../img/logoHover.png)
+                        background-position: center center
+                        background-size: cover
+                .burger
+                    display: block
+                .d-none
+                    opacity: 0
+                .d-block
+                    display: block
+                    position: absolute
+                    right: 4%
+                    top: 50px
+        .help, .secondButton2
+            display: none!important
+        .container
+            margin: 0 40px
+            .section
+                display: block
+                .title
+                    margin: 0 auto!important
+                    font-size: 43px!important
+                    opacity: 1!important
+                    transform: translateY(0)!important
+                .text
+                    margin-left: auto!important
+                    margin-right: auto!important
+                    font-size: 20px!important
+                    opacity: 1!important
+                    transform: translateY(0)!important
+                .secondButton, .firstButton, .thirdButton
+                    margin: 35px auto 0!important
+                    text-align: left
+                    transform: translateY(0)!important
+                    opacity: 1!important
+            .firstSection
+                .firstSection_wrap
+                    flex-direction: column-reverse
+                    padding-top: 54px
+                    .firstImgs
+                        margin-top: -290px
+                        transform: scale(0.8)
+                        opacity: 1!important
+                        img
+                            animation: none!important
+                    .firstContent
+                        text-align: center
+                        margin-top: -80px
+            .secondSection
+                .secondSection_wrap
+                    flex-direction: column-reverse
+                    .secondImgs
+                        left: -180px
+                        margin-left: 200px
+                        margin-top: -210px
+                        transform: scale(0.7)
+                        opacity: 1!important
+                        img
+                            animation: none!important
+                    .secondContent
+                        text-align: center
+                        margin-top: -90px
+                        .secondText
+                            margin-top: 15px
+                            margin-bottom: 20px
+                        .offer
+                            transform: translateY(0)!important
+                            opacity: 1!important
+                            width: 370px
+                            margin-left: auto
+                            margin-right: auto
+                            p
+                                font-size: 20px
+                        .offer1
+                            margin-bottom: 15px
+                        .offer2
+                            margin-bottom: 18px
+            .thirdSection
+                .thirdSection_wrap
+                    flex-direction: column-reverse
+                    .thirdImgs
+                        position: relative
+                        left: -130px
+                        margin-left: 130px
+                        margin-top: -270px
+                        transform: scale(0.7)
+                        opacity: 1!important
+                        img
+                            animation: none!important
+                    .thirdContent
+                        text-align: center
+            .fourthSection
+                .fourthSection_wrap
+                    padding-top: 0
+                    .fourthTitle
+                        font-size: 38px
+                        text-align: center
+                    .fourthTitle1
+                        margin-top: 30px
+                        margin-bottom: 15px
+                    .meeting_wrap
+                        flex-direction: column
+                        height: auto
+                        position: relative
+                        .meeting_img-wrap
+                            width: 291px
+                            height: 368px
+                            margin: 0 auto
+                        .desc_wrap
+                            margin: 0 auto
+                            width: 100%
+                            text-align: center
+                            p
+                                width: 100%
+                                margin: 0
+                            .desc_buttons
+                                display: block
+                                position: absolute
+                                left: 50%
+                                transform: translateX(-50%)
+                                top: 866px
+                                text-align: center
+                                .desc_button
+                                    margin: 0 auto
+                                    text-align: left
+                                    padding: 14px 90px
+                                    width: 110px
+                                .desc_link
+                                    top: 58px
+                                    &::before
+                                        content: ""
+                                        display: block
+                                        height: 2px
+                                        background: #D8D8D8
+                                        position: relative
+                                        top: -22px
+                                    &::after
+                                        left: 70px
+                                        top: 7px
+                        .vertical
+                            height: 2px
+                            width: 100%
+                            position: absolute
+                            top: 604px
+                        .adress
+                            margin: 0 auto
+                            text-align: center
+                            p
+                                font-size: 19px
+                                &:nth-of-type(2)
+                                    margin-top: 25px
+                                    margin-bottom: 25px
+                    .fourthTitle2
+                        margin-top: 240px
+                        text-align: left
+                        margin-bottom: 25px
+                        &::before
+                            content: ""
+                            display: block
+                            height: 2px
+                            width: 100%
+                            background: #D8D8D8
+                            position: relative
+                            top: -28px
+                    form 
+                        input, textarea
+                            width: calc(100% - 60px)!important
+                        textarea
+                            margin-bottom: 12px
+                    .fourthButton_wrap
+                        flex-direction: column
+                        align-items: center
+                        margin-bottom: 25px
+                        .fourthButton
+                            margin-bottom: 20px
+                            &:hover
+                                width: 264px
+                                height: 19px
+                            &:hover::after
+                                left: 236px
+                        .btn_rdy
+                            width: 264px
+                            height: 19px
+                            &::after
+                                left: 236px
+                        .btnUp
+                            display: block
+                    hr
+                        margin-bottom: 25px
+                    .footer 
+                        .footer_wrap
+                            flex-direction: column-reverse
+                            .social
+                                justify-content: space-around
+                                margin-bottom: 25px
+                            .footer_adress
+                                width: auto
+                                justify-content: space-around
+                                p
+                                    width: 270px
+                                    &:last-of-type
+                                        width: 200px
+                        .footer_line
+                            margin-top: 25px
+    .aboutUs
+        font-size: 18px
+        .topPic
+            padding-top: 100px
+            height: 254px
+            .topWrap
+                margin: 0 40px
+                h1
+                    margin-top: 0
+                    font-size: 38px
+                    width: 390px
+                    font-weight: 400
+                p
+                    width: 465px
+                .firstButton
+                    width: 264px
+                    padding-top: 13px
+                    padding-bottom: 20px
+                    margin-top: 38px
+                    &::after
+                        padding: 1.5px 12px
+                        top: 6px
+                        left: 243px
+        .aboutUs_wrap
+            .aboutUs_text
+                display: none
+            .mediaBuyingTeam
+                flex-direction: column
+                .mediaBuyingTeam_content
+                    opacity: 1
+                    transform: none
+                    width: calc(100% - 80px)
+                    text-align: center
+                    padding: 0 40px
+                    h2
+                        font-size: 38px
+                        margin-top: 30px
+                        margin-bottom: 30px
+                    .mediaBuyingTeam_content-text1
+                        margin-bottom: 20px
+                    .secondButton
+                        width: 290px
+                        padding: 14px 0
+                        margin: 35px auto 45px
+                .mediaBuyingTeam_pic
+                    opacity: 1
+                    transform: none
+                    height: auto
+                    img
+                        width: 100%
+                        position: relative
+                        left: 50%
+                        transform: translateX(-50%)
+            .aboutUs_Krylov
+                flex-direction: column
+                margin: 0 40px
+                .aboutUs_Krylov-wrap
+                    opacity: 1
+                    transform: none
+                    position: static
+                    text-align: center
+                    h3
+                        margin-bottom: 15px
+                    p
+                        margin: 0 auto 25px
+                    .social
+                        justify-content: center
+                        margin-bottom: 35px
+                        .social_icon
+                            width: 52px
+                            height: 52px
+                .aboutUs_Krylov-text
+                    opacity: 1
+                    transform: none
+                    margin: 19px auto 35px
+                    text-align: center
+                    width: 480px
+                .aboutUs_Krylov-pic
+                    width: 100%
+                    opacity: 1
+                    transform: none
+                    position: static
+        .footerAboutUs 
+            .footerAboutUs_wrap 
+                .programmatic
+                    padding-top: 0
+                    flex-direction: column-reverse
+                    .programmatic_img-wrap
+                        img
+                            width: 100%
+                    .programmatic_content-wrap
+                        margin: 0 40px
+                        text-align: center
+                        h3
+                            font-size: 38px
+                            margin-top: 10px
+                            margin-bottom: 25px
+                        .programmatic-text
+                            flex-direction: column
+                            align-items: center
+                            margin-bottom: 30px!important
+                            img
+                                margin-bottom: 20px
+                                margin-right: 0
+                                width: 70px
+                                height: 70px
+                        .programmatic-text3
+                            margin-bottom: 0!important
+                .fourthButton_wrap
+                    flex-direction: column
+                    align-items: center
+                    margin: 35px 0 25px
+                    .secondButton
+                        width: 290px
+                        text-align: center
+                        padding: 14px 0
+                        margin-bottom: 30px
+                    .btnUp
+                        width: 48px
+                        height: 48px
+                        &::after
+                            top: 14px
+                            left: 20px
+                hr
+                    margin-bottom: 25px
+                .footer_contacts
+                    flex-direction: column-reverse
+                    margin: 0 40px
+                    .social
+                        justify-content: space-around
+                        margin-bottom: 25px
+                        .social_icon
+                            width: 52px
+                            height: 52px
+                    .footer_adress
+                        flex-direction: column
+                        width: auto
+                        p
+                            text-align: left
+                            &:first-of-type
+                                margin-bottom: 25px
+        .pub
+            height: 18px
+            background: #1F1E31
+    .contacts
+        .topPic 
+            .topWrap
+                display: none
+        .contacts_wrap 
+            padding-top: 75px
+            margin: 0 40px
+            h1
+                font-size: 38px
+                margin-left: 0
+                text-align: center
+                top: 0
+                margin-bottom: 25px
+            .meeting_wrap
+                flex-direction: column
+                height: auto
+                position: relative
+                margin-bottom: 112px
+                .meeting_img-wrap
+                    width: 291px
+                    height: 368px
+                    margin: 0 auto
+                .desc_wrap
+                    margin: 0 auto
+                    width: 100%
+                    text-align: left
+                    h3
+                        margin-bottom: 20px
+                    p
+                        width: 100%
+                        margin: 0
+                        font-size: 18px
+                    .desc_buttons
+                        display: block
+                        position: absolute
+                        left: 50%
+                        transform: translateX(-50%)
+                        top: 848px
+                        text-align: center
+                        .desc_button
+                            margin: 0 auto
+                            text-align: left
+                            padding: 14px 90px
+                            width: 110px
+                .vertical
+                    height: 2px
+                    width: 100%
+                    margin-top: 20px
+                .adress
+                    margin-left: 0
+                    text-align: center
+                    .time
+                        flex-direction: column
+                        align-items: center
+                        text-align: center
+                        margin-bottom: 30px
+                        p
+                            font-size: 18px
+                        img
+                            top: 0
+                            margin-bottom: 10px
+                            margin-right: 0
+                    .time1
+                        margin-top: 20px
+                    a
+                        margin-left: 0
+        .footerContacts 
+            .footerContacts_wrap
+                margin: 0 40px
+                padding-top: 0
+                .fourthTitle2
+                    font-size: 38px
+                    padding-top: 30px
+                    line-height: 1
+                    margin-bottom: 30px
+                form
+                    input, textarea
+                        width: calc(100% - 60px)!important
+                .footer_contacts
+                    flex-direction: column-reverse
+                    .social
+                        justify-content: space-around
+                        margin-bottom: 25px
+                        .social_icon
+                            width: 52px
+                            height: 52px
+                    .footer_adress
+                        flex-direction: column
+                        width: auto
+                        p
+                            text-align: left
+                            &:first-of-type
+                                margin-bottom: 25px
+                .fourthButton_wrap 
+                    height: 52px
+                    margin-bottom: 25px
+                    .fourthButton
+                        &::after
+                            padding: 8px 15px 8px 18px
+                        &:hover
+                            padding-top: 13px
+                            padding-bottom: 25px
+                            width: 264px
+                        &:hover::after
+                            padding: 1.5px 8.5px 1.5px 11.5px
+                            top: 6px
+                            left: 242px
+                    .btn_rdy
+                        width: 264px
+                        padding-top: 13px
+                        &::after
+                            left: 234px
+                            top: 0
+                    .btnUp
+                        width: 48px
+                        height: 48px
+                        &::after
+                            top: 10px
+                            left: 20px
+                hr
+                    margin-bottom: 25px
+        .pub
+            height: 18px
+            background: #1F1E31    
+@media (max-width: 768px)
+    body 
+        .container
+            .section 
+                .title
+                    font-size: 38px!important
+                .text
+                    font-size: 18px!important
+                .secondButton, .firstButton, .thirdButton
+                    margin: 25px auto 0!important
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-top: -290px
+                        transform: scale(0.7)
+                        left: -80px
+                    .firstContent
+                        margin-top: -130px
+                        .firstTitle, .firstText
+                            width: 380px
+                        .firstButton
+                            padding-left: 33px
+                            padding-right: 101px
+                            width: 156px
+                            &::after
+                                left: 235px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: -80px
+                        margin-left: 0
+                        margin-top: -160px
+                    .secondContent
+                        margin-top: -130px
+                        .secondTitle, .secondText
+                            width: 400px
+                        .offer
+                            width: 310px
+                            p
+                                font-size: 18px
+                            img
+                                transform: scale(0.8)
+                        .offer1
+                            p
+                                margin-left: 21px
+                        .offer2
+                            p
+                                margin-left: 20px
+                        .offer3
+                            p
+                                margin-left: 27px
+                        .secondButton
+                            width: 120px
+                            padding-left: 85px
+                            padding-right: 85px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        left: 60px
+                        margin-left: -190px
+                        margin-top: -190px
+                    .thirdContent 
+                        margin-top: -40px
+                        .thirdTitle, .thirdText
+                            z-index: 2
+                            width: 355px
+                        .thirdButton
+                            width: 124px
+                            padding-left: 83px
+                            padding-right: 83px
+            .fourthSection 
+                .fourthSection_wrap 
+                    .meeting_wrap 
+                        .desc_wrap
+                            h3
+                                margin-bottom: 20px
+                            p
+                                font-size: 18px
+                            .desc_buttons
+                                top: 810px
+                                .desc_link
+                                    top: 60px
+                        .vertical
+                            top: 588px
+                        .adress 
+                            p
+                                font-size: 18px
+                                &:nth-of-type(2)
+                                    margin-bottom: 20px
+                    .fourthTitle2
+                        margin-top: 238px
+    .publishing
+        font-size: 18px
+        .topPic
+            padding-top: 100px
+            height: 254px
+            .topWrap
+                margin: 0 40px
+                h1
+                    margin-top: 0
+                    font-size: 38px
+                    width: 390px
+                    font-weight: 400
+                p
+                    width: 465px
+                .firstButton
+                    width: 264px
+                    padding-top: 13px
+                    padding-bottom: 20px
+                    margin-top: 38px
+                    &::after
+                        padding: 1.5px 12px
+                        top: 6px
+                        left: 243px
+        .publishingWrap
+            margin: 0 40px
+            .publishingText
+                width: auto
+                margin-top: 35px
+            .publishingOffer_wrap
+                margin-top: 25px
+            h2
+                font-size: 38px
+                width: 480px
+                margin-top: 40px
+            .publishingText2
+                width: auto
+                margin-top: 40px
+            .stepsWrap
+                margin: 0 0 0 80px
+                .step_wrap 
+                    .step
+                        width: 230px
+                        h3
+                            font-size: 30px
+                            margin-top: 83px
+                    img
+                        top: 40px
+            .firstButton
+                margin-top: 40px
+                margin-bottom: 40px
+                width: 264px
+                padding-top: 13px
+                padding-bottom: 20px
+                &::after
+                    padding: 1.5px 12px
+                    top: 6px
+                    left: 243px
+        .footerPublishing
+            padding-bottom: 25px
+            .footerPublishing_wrap
+                margin: 0 40px
+                display: flex
+                flex-direction: column
+                padding-top: 10px
+                #parentDel
+                    order: -1
+                    width: auto
+                    margin: 0 auto
+                    display: flex
+                    flex-wrap: wrap
+                    img
+                        width: 100px
+                        height: 100px
+                        display: block
+                        margin: 0 auto
+                        margin-bottom: 5px
+                h3
+                    font-size: 38px
+                    width: 200px
+                    margin: 35px auto 0
+                p
+                    margin-bottom: 0
+                    text-align: center
+                .fourthButton_wrap
+                    margin-top: 30px
+                    margin-bottom: 25px
+                    .btnUp
+                        width: 48px
+                        height: 48px
+                        &::after
+                            top: 14px
+                            left: 20px
+                hr
+                    margin-bottom: 25px
+                    margin-top: 0
+                .footer_contacts
+                    flex-direction: column-reverse
+                    .social
+                        justify-content: space-around
+                        margin-bottom: 25px
+                        .social_icon
+                            width: 52px
+                            height: 52px
+                    .footer_adress
+                        flex-direction: column
+                        width: auto
+                        p
+                            text-align: left
+                            &:first-of-type
+                                margin-bottom: 25px
+        .pub
+            height: 18px
+            background: #1F1E31
+    .contacts
+        .topPic 
+            .topWrap
+                display: none
+        .contacts_wrap 
+            padding-top: 75px
+            margin: 0 40px
+            h1
+                font-size: 38px
+                margin-left: 0
+                text-align: center
+                top: 0
+                margin-bottom: 25px
+            .meeting_wrap
+                flex-direction: column
+                height: auto
+                position: relative
+                margin-bottom: 112px
+                .meeting_img-wrap
+                    width: 291px
+                    height: 368px
+                    margin: 0 auto
+                .desc_wrap
+                    margin: 0 auto
+                    width: 100%
+                    text-align: left
+                    h3
+                        margin-bottom: 20px
+                    p
+                        width: 100%
+                        margin: 0
+                        font-size: 18px
+                    .desc_buttons
+                        display: block
+                        position: absolute
+                        left: 50%
+                        transform: translateX(-50%)
+                        top: 848px
+                        text-align: center
+                        .desc_button
+                            margin: 0 auto
+                            text-align: left
+                            padding: 14px 90px
+                            width: 110px
+                .vertical
+                    height: 2px
+                    width: 100%
+                    margin-top: 20px
+                .adress
+                    margin-left: 0
+                    text-align: center
+                    .time
+                        flex-direction: column
+                        align-items: center
+                        text-align: center
+                        margin-bottom: 30px
+                        p
+                            font-size: 18px
+                        img
+                            top: 0
+                            margin-bottom: 10px
+                            margin-right: 0
+                    .time1
+                        margin-top: 20px
+                    a
+                        margin-left: 0
+        .footerContacts 
+            .footerContacts_wrap
+                margin: 0 40px
+                padding-top: 0
+                .fourthTitle2
+                    font-size: 38px
+                    padding-top: 30px
+                    line-height: 1
+                    margin-bottom: 30px
+                form
+                    input, textarea
+                        width: calc(100% - 60px)!important
+                .footer_contacts
+                    flex-direction: column-reverse
+                    .social
+                        justify-content: space-around
+                        margin-bottom: 25px
+                        .social_icon
+                            width: 52px
+                            height: 52px
+                    .footer_adress
+                        flex-direction: column
+                        width: auto
+                        p
+                            text-align: left
+                            &:first-of-type
+                                margin-bottom: 25px
+                .fourthButton_wrap 
+                    height: 52px
+                    margin-bottom: 25px
+                    .fourthButton
+                        &::after
+                            padding: 8px 15px 8px 18px
+                        &:hover
+                            padding-top: 13px
+                            padding-bottom: 25px
+                            width: 264px
+                        &:hover::after
+                            padding: 1.5px 8.5px 1.5px 11.5px
+                            top: 6px
+                            left: 242px
+                    .btn_rdy
+                        width: 264px
+                        padding-top: 13px
+                        &::after
+                            left: 234px
+                            top: 0
+                    .btnUp
+                        width: 48px
+                        height: 48px
+                        &::after
+                            top: 10px
+                            left: 20px
+                hr
+                    margin-bottom: 25px
+        .pub
+            height: 18px
+            background: #1F1E31    
+@media (max-width: 739px)
+    body 
+        .container 
+            .fourthSection 
+                .fourthSection_wrap 
+                    .meeting_wrap 
+                        .vertical
+                            top: 613px
+                        .desc_wrap 
+                            .desc_buttons 
+                                top: 840px
+@media ( max-width: 699px )
+    .publishing
+        .publishingWrap 
+            .stepsWrap
+                flex-direction: column
+                margin: 0 auto
+                width: 230px
+                padding-left: 60px
+@media (min-width: 694px) and (max-width: 738px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: -110px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: -110px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -220px
+@media (min-width: 653px) and (max-width: 693px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: -130px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-left: -40px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        left: 75px
+                        margin-left: -260px
+@media (max-width: 630px)
+    body 
+        .container 
+            .fourthSection 
+                .fourthSection_wrap 
+                    .meeting_wrap 
+                        .vertical
+                            top: 615px
+                        .desc_wrap 
+                            .desc_buttons
+                                top: 830px
+                    .fourthTitle2
+                        margin-top: 230px
+    .publishing 
+        .publishingWrap 
+            .publishingOffer_wrap 
+                .publishingOffer
+                    width: 158px
+        .footerPublishing 
+            .footerPublishing_wrap 
+                .fourthButton_wrap 
+                    .download 
+                        .googlePlay
+                            margin-left: 30px
+@media (min-width: 625px) and (max-width: 652px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: -120px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: -100px
+                        margin-left: -40px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -260px
+                        left: 80px
+@media (min-width: 600px) and (max-width: 624px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: -100px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: -90px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        left: 85px
+@media (min-width: 570px) and (max-width: 599px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: -90px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: -80px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        left: 105px
+@media (min-width: 544px) and (max-width: 569px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: -80px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: -70px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        left: 115px
+@media (max-width: 544px)
+    body 
+        .container
+            .fourthSection 
+                .fourthSection_wrap 
+                    .meeting_wrap 
+                        .vertical
+                            top: 690px
+                        .desc_wrap 
+                            .desc_buttons
+                                top: 910px
+    .publishing
+        .topPic 
+            .topWrap 
+                p
+                    width: auto
+        .publishingWrap
+            h2
+                width: max-content
+                font-size: 30px
+            .publishingOffer_wrap
+                flex-direction: column
+                align-items: center
+                .publishingOffer
+                    width: 156px
+                    &:nth-of-type(1)
+                        width: 118px
+                    &:nth-of-type(2)
+                        width: 144px
+                        left: 0
+                    p
+                        margin-top: 10px
+                        margin-bottom: 35px
+                    .lastParagraph
+                        margin-bottom: 0
+    .aboutUs 
+        .topPic 
+            .topWrap 
+                h1
+                    width: fit-content
+                p
+                    width: fit-content
+        .aboutUs_wrap 
+            .aboutUs_Krylov 
+                .aboutUs_Krylov-text
+                    width: fit-content
+        .footerAboutUs 
+            .footerAboutUs_wrap 
+                .programmatic 
+                    .programmatic_content-wrap 
+                        .programmatic-text 
+                            p
+                                width: fit-content
+@media (max-width: 537px)
+    body 
+        .container 
+            .fourthSection 
+                .fourthSection_wrap 
+                    .meeting_wrap 
+                        .vertical
+                            top: 720px
+                        .desc_wrap 
+                            .desc_buttons
+                                top: 930px
+@media (min-width: 520px) and (max-width: 543px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: -70px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: -60px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        left: 125px
+@media (min-width: 490px) and (max-width: 519px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: -50px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: -40px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        left: 145px
+@media (max-width: 489px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: -35px
+                        transform: scale(0.65)
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: -25px
+                        transform: scale(0.65)
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        left: 150px
+                        transform: scale(0.65)
+            .fourthSection 
+                .fourthSection_wrap 
+                    .meeting_wrap 
+                        .vertical
+                            top: 715px
+                        .desc_wrap 
+                            .desc_buttons
+                                top: 930px
+    .publishing 
+        .topPic 
+            .topWrap 
+                h1
+                    margin-bottom: 0
+                .firstButton
+                    margin-top: 30px
+@media (max-width: 450px)
+    body
+        .header 
+            .header_wrap
+                margin: 0 20px
+        .container
+            margin: 0 20px
+            .section
+                .title
+                    letter-spacing: 0!important
+                    font-size: 34px!important
+                    width: 330px!important
+                .text
+                    width: 330px!important
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: -5px
+                        transform: scale(0.60)
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: -15px
+                        transform: scale(0.60)
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -215px
+                        left: 205px
+                        transform: scale(0.55)
+            .fourthSection 
+                .fourthSection_wrap 
+                    .fourthTitle
+                        font-size: 34px
+                    .meeting_wrap 
+                        .vertical
+                            top: 720px
+                        .desc_wrap 
+                            .desc_buttons
+                                top: 935px
+                    .footer 
+                        .footer_wrap 
+                            .footer_adress
+                                flex-direction: column
+                                p
+                                    width: auto!important
+                                    &:first-of-type
+                                        margin-bottom: 20px
+    .publishing 
+        .topPic 
+            .topWrap
+                margin: 0 20px
+                h1
+                    font-size: 34px
+                    width: max-content
+        .publishingWrap
+            margin: 0 20px
+            h2
+                font-size: 27px
+        .footerPublishing 
+            .footerPublishing_wrap
+                margin: 0 20px
+                h3
+                    font-size: 34px
+                    width: max-content
+    .aboutUs 
+        .topPic 
+            .topWrap
+                margin: 0 20px
+                h1
+                    font-size: 34px
+        .aboutUs_wrap 
+            .mediaBuyingTeam
+                align-items: center
+                .mediaBuyingTeam_content
+                    padding: 0 20px
+                    margin: 0
+                    width: auto
+                    h2
+                        font-size: 34px
+            .aboutUs_Krylov
+                margin: 0 20px
+                .aboutUs_Krylov-text
+                    font-size: 31px
+        .footerAboutUs 
+            .footerAboutUs_wrap 
+                .programmatic 
+                    .programmatic_content-wrap
+                        margin: 0 20px
+                        h3
+                            font-size: 34px
+                .footer_contacts
+                    margin: 0 20px
+    .contacts 
+        .contacts_wrap
+            margin: 0 20px
+            h1
+               font-size: 34px
+            .meeting_wrap 
+                .desc_wrap 
+                    h3
+                        font-size: 30px
+        .footerContacts 
+            .footerContacts_wrap
+                margin: 0 20px
+                .fourthTitle2
+                    font-size: 34px
+@media (max-width: 441px)
+    body 
+        .container 
+            .fourthSection 
+                .fourthSection_wrap 
+                    .meeting_wrap 
+                        .vertical
+                            top: 745px
+                        .desc_wrap 
+                            .desc_buttons
+                                top: 965px
+@media (min-width: 430px) and (max-width: 449px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: 10px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: -5px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        left: 215px
+@media (max-width: 429px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: 15px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: 15px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -250px
+                        margin-right: 100px
+                        left: 265px
+@media (min-width: 390px) and (max-width: 409px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: 25px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: 30px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        left: 280px
+@media (max-width: 389px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: 35px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: 50px
+                        transform: scale(0.55)
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -250px
+                        margin-right: 100px
+                        left: 290px
+    .publishing 
+        .topPic 
+            .topWrap 
+                h1
+                    font-size: 24px
+        .publishingWrap 
+            h2
+                font-size: 22px
+        .footerPublishing 
+            .footerPublishing_wrap 
+                h3
+                    font-size: 24px
+                .fourthButton_wrap
+                    flex-direction: column
+                    .download
+                        flex-direction: column
+                        .appStore
+                            width: 169px
+                            height: 54px
+                            background-size: cover
+                        .googlePlay
+                            margin-left: 0
+                            margin-top: 10px
+                            margin-bottom: 15px
+                            width: 195px
+                            height: 70px
+                            background-size: cover
+                    .btnUp
+                        margin: 0 auto
+    .aboutUs 
+        .topPic 
+            .topWrap 
+                h1
+                    font-size: 24px
+        .aboutUs_wrap 
+            .mediaBuyingTeam 
+                .mediaBuyingTeam_content 
+                    h2
+                        font-size: 24px
+            .aboutUs_Krylov 
+                .aboutUs_Krylov-text
+                    font-size: 22px
+                .aboutUs_Krylov-wrap 
+                    h3
+                        font-size: 24px
+        .footerAboutUs 
+            .footerAboutUs_wrap 
+                .programmatic 
+                    .programmatic_content-wrap 
+                        h3
+                            font-size: 24px
+                .footer_contacts 
+                    .footer_adress 
+                        p
+                            font-size: 14px
+                            span
+                                font-size: 14px
+    .contacts 
+        .contacts_wrap 
+            h1
+                font-size: 24px
+            .meeting_wrap 
+                .desc_wrap 
+                    h3
+                        font-size: 24px
+        .footerContacts 
+            .footerContacts_wrap 
+                .fourthTitle2
+                    font-size: 24px
+                .fourthButton_wrap
+                    flex-direction: column
+                    height: auto
+                    align-items: center
+                    .fourthButton
+                        width: 52px
+                        height: 52px
+                        margin-bottom: 25px
+                .footer_contacts 
+                    .footer_adress 
+                        p
+                            font-size: 14px
+                            span
+                                font-size: 14px
+@media (max-width: 388px)
+    body 
+        .container 
+            .fourthSection 
+                .fourthSection_wrap 
+                    .meeting_wrap 
+                        .vertical
+                            top: 775px
+                        .desc_wrap 
+                            .desc_buttons
+                                top: 995px
+@media (max-width: 365px)
+    body 
+        .header 
+            .header_wrap
+                margin: 0 15px
+        .container
+            margin: 0 15px
+            .section 
+                .title
+                    font-size: 24px!important
+                    width: 270px!important
+                .text
+                    width: 270px!important
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: 50px
+                        transform: scale(0.55)
+                    .firstContent 
+                        .firstButton
+                            padding-top: 13px
+                            padding-bottom: 20px
+                            &::after
+                                left: 244px
+                                padding: 1.5px 12px
+                                top: 6px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: 65px
+                        transform: scale(0.50)
+                    .secondContent
+                        .offer
+                            text-align: left
+                            width: 270px
+                            p
+                                width: 210px
+                        .secondButton
+                            padding-top: 14px
+                            padding-bottom: 14px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        left: 300px
+                        transform: scale(0.50)
+                    .thirdContent 
+                        .thirdButton
+                            padding-top: 14px
+                            padding-bottom: 14px
+            .fourthSection 
+                .fourthSection_wrap 
+                    .fourthTitle
+                        font-size: 24px
+                    .meeting_wrap 
+                        .desc_wrap 
+                            h3
+                                font-size: 24px
+                                width: 290px
+                                margin-left: auto
+                                margin-right: auto
+                                text-align: left
+                            p
+                                width: 290px
+                                margin-left: auto
+                                margin-right: auto
+                                text-align: left
+                            .desc_buttons
+                                top: 1020px
+                        .vertical
+                            top: 805px
+                    form 
+                        input[type="text"], input[type="email"]
+                            height: 38px
+                            font-size: 18px
+                            padding: 0 15px
+                        input, textarea
+                            width: calc(100% - 30px)!important
+                        textarea
+                            padding: 10px 15px
+                            font-size: 18px
+                            height: 100px
+                            border-radius: 18px
+                        input::-webkit-input-placeholder
+                            font-size: 18px
+                        input::-moz-placeholder
+                            font-size: 18px
+                        textarea::-webkit-input-placeholder
+                            font-size: 18px
+                        textarea::-moz-placeholder
+                            font-size: 18px
+                    .fourthButton_wrap 
+                        .btnUp
+                            width: 48px
+                            height: 48px
+                            &::after
+                               width: 6px
+                               height: 16px
+                               top: 10px
+                               left: 20px 
+                    .footer 
+                        .footer_wrap 
+                            .footer_adress 
+                                p
+                                    font-size: 14px
+                                    span
+                                        font-size: 14px
+                            .social 
+                                .social_icon
+                                    width: 52px
+                                    height: 52px
+                                    img
+                                        width: 22px
+                                        height: 22px
+    .publishing 
+        .topPic 
+            .topWrap
+                margin: 0 15px
+        .publishingWrap
+            margin: 0 15px
+        .footerPublishing 
+            .footerPublishing_wrap
+                margin: 0 10px
+                .footer_contacts 
+                    .footer_adress 
+                        p
+                            font-size: 14px
+                            span
+                                font-size: 14px
+    .aboutUs
+        .topPic 
+            .topWrap
+                margin: 0 15px
+        .aboutUs_wrap 
+            .mediaBuyingTeam 
+                .mediaBuyingTeam_content
+                    padding: 0 15px
+            .aboutUs_Krylov
+                margin: 0 15px
+        .footerAboutUs 
+            .footerAboutUs_wrap 
+                .programmatic 
+                    .programmatic_content-wrap
+                        margin: 0 15px
+                .footer_contacts
+                    margin: 0 15px
+                    padding-bottom: 25px
+    .contacts 
+        .contacts_wrap
+            margin: 0 15px
+        .footerContacts 
+            .footerContacts_wrap
+                margin: 0 15px
+                form 
+                    input[type="text"], input[type="email"]
+                        height: 38px
+                        font-size: 18px
+                        padding: 0 15px
+                    input, textarea
+                        width: calc(100% - 30px)!important
+                    textarea
+                        padding: 10px 15px
+                        font-size: 18px
+                        height: 100px
+                        border-radius: 18px
+                    input::-webkit-input-placeholder
+                        font-size: 18px
+                    input::-moz-placeholder
+                        font-size: 18px
+                    textarea::-webkit-input-placeholder
+                        font-size: 18px
+                    textarea::-moz-placeholder
+                        font-size: 18px
+@media (max-width: 350px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: 60px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: 75px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        left: 310px
+@media (max-width: 320px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        transform: scale(0.5)
+                        left: 80px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        left: 85px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        transform: scale(0.45)
+                        left: 327px
+@media (max-height: 569px) and (max-width: 320px)
+    body 
+        .container
+            .firstSection
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-top: -260px
+                    .firstContent
+                        margin-top: -220px
+            .secondSection
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-top: -230px
+                    .secondContent
+                        margin-top: -170px
+            .thirdSection
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-top: -260px
+                    .thirdContent
+                        margin-top: -70px
+@media (min-width: 360px ) and ( min-height: 550px ) and (max-height: 700px) and (max-width: 768px)
+    body 
+        .container
+            .firstSection
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-top: -240px
+                    .firstContent
+                        margin-top: -160px
+            .secondSection
+                .secondSection_wrap
+                    .secondImgs
+                        margin-top: -220px
+                    .secondContent
+                        margin-top: -140px
+            .thirdSection
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-top: -230px
+                    .thirdContent
+                        margin-top: -70px
+@media (min-width: 360px ) and ( min-height: 701px ) and (max-height: 740px) and (max-width: 768px)
+    body 
+        .container
+            .firstSection
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-top: -240px
+                    .firstContent
+                        margin-top: -160px
+            .secondSection
+                .secondSection_wrap
+                    .secondImgs
+                        margin-top: -220px
+                    .secondContent
+                        margin-top: -140px
+            .thirdSection
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-top: -250px
+@media (min-width: 360px ) and ( min-height: 741px ) and (max-height: 780px) and (max-width: 768px)
+    body 
+        .container
+            .firstSection
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-top: -240px
+                    .firstContent
+                        margin-top: -160px
+            .secondSection
+                .secondSection_wrap
+                    .secondImgs
+                        margin-top: -220px
+                    .secondContent
+                        margin-top: -140px
+            .thirdSection
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-top: -270px
+            .fourthSection 
+                .fourthSection_wrap 
+                    .fourthTitle1
+                        margin-top: 0
+@media (min-width: 360px ) and ( min-height: 781px ) and (max-height: 820px) and (max-width: 768px)
+    body 
+        .container
+            .firstSection
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-top: -240px
+                    .firstContent
+                        margin-top: -160px
+            .secondSection
+                .secondSection_wrap
+                    .secondImgs
+                        margin-top: -220px
+                    .secondContent
+                        margin-top: -140px
+            .thirdSection
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-top: -320px
+            .fourthSection 
+                .fourthSection_wrap 
+                    .fourthTitle1
+                        margin-top: 0
+@media (min-width: 700px) and (max-width: 1000px) and (max-height: 450px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: -70px
+                        margin-top: -190px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-top: -180px
+                        margin-left: 110px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-top: -190px
+                        margin-left: -110px
+                        left: 0
+@media (min-width: 600px) and (max-width: 699px) and (max-height: 450px)
+    body 
+        .container
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-top: -190px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-top: -180px
+                        margin-left: -50px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-top: -190px
+                        margin-left: -250px
+@media only screen and (orientation: landscape) and (min-width: 1200px)
+  @supports (-webkit-appearance:none) and (stroke-color:transparent)
+    html::-webkit-scrollbar 
+        width: 0px
+
+@media (orientation: landscape) and (max-height: 768px)
+    body 
+        .container 
+            .section
+                height: auto!important
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        left: -110px
+                        margin-left: 0!important
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-left: 0!important
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -200px!important
+                        left: 45px
+        #fp-nav
+            display: none
+@media (orientation: landscape) and (max-width: 1000px)
+    body 
+        .container 
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-left: 120px!important
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-left: 210px!important
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: 30px !important
+                        left: -55px
+@media (orientation: landscape) and (max-width: 1000px) and (min-width: 769px)
+    body 
+        .container
+            .fourthSection 
+                .fourthSection_wrap 
+                    .meeting_wrap 
+                        .desc_wrap 
+                            .desc_buttons
+                                top: 846px
+@media (orientation: landscape) and (max-width: 950px)
+    body 
+        .container 
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-left: 100px!important
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-left: 190px!important
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: 10px !important
+@media (orientation: landscape) and (max-width: 900px)
+    body 
+        .container 
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-left: 50px!important
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-left: 140px!important
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -30px !important
+                        left: -35px
+@media (orientation: landscape) and (max-width: 855px)
+    body 
+        .container 
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-left: 120px!important
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -110px !important
+                        left: 15px
+@media (orientation: landscape) and (max-width: 800px)
+    body 
+        .container 
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-left: 30px!important
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-left: 100px!important
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -135px !important
+@media (orientation: landscape) and (max-width: 777px) and (min-width: 769px)
+    body 
+        .container 
+            .fourthSection 
+                .fourthSection_wrap 
+                    .meeting_wrap
+                        .vertical
+                            top: 634px
+                        .desc_wrap 
+                            .desc_buttons
+                                top: 876px
+@media (orientation: landscape) and (max-width: 768px)
+    body 
+        .container 
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-left: -20px!important
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -145px !important
+@media (orientation: landscape) and (max-width: 740px)
+    body 
+        .container 
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-left: 20px!important
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-left: -35px!important
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -205px !important
+                        left: 65px
+@media (orientation: landscape) and (max-width: 700px)
+    body 
+        .container 
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-left: 0px!important
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-left: -35px!important
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -225px !important
+@media (orientation: landscape) and (max-width: 660px)
+    body 
+        .container 
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-left: -20px!important
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-left: -65px!important
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -305px !important
+                        left: 120px
+@media (orientation: landscape) and (max-width: 630px)
+    body 
+        .container 
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-left: -30px!important
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -325px !important
+@media (orientation: landscape) and (max-width: 629px)
+    body 
+        .container 
+            .fourthSection 
+                .fourthSection_wrap 
+                    .meeting_wrap
+                        .vertical
+                            top: 645px
+                        .desc_wrap 
+                            .desc_buttons
+                                top: 860px
+@media (orientation: landscape) and (max-width: 599px)
+    body 
+        .container 
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-top: -200px
+                        margin-left: -40px!important
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-left: -145px!important
+                        left: -30px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -340px !important
+@media (orientation: landscape) and (max-width: 560px)
+    body 
+        .container 
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-left: -60px!important
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-left: -175px!important
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -355px !important
+@media (orientation: landscape) and (max-width: 544px)
+    body 
+        .container 
+            .fourthSection 
+                .fourthSection_wrap 
+                    .meeting_wrap
+                        .vertical
+                            top: 690px
+                        .desc_wrap 
+                            .desc_buttons
+                                top: 910px
+@media (orientation: landscape) and (max-width: 540px)
+    body 
+        .container 
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-left: -120px!important
+                        left: -60px
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-left: -185px!important
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -365px !important
+@media (orientation: landscape) and (max-width: 537px)
+    body 
+        .container 
+            .fourthSection 
+                .fourthSection_wrap 
+                    .meeting_wrap
+                        .vertical
+                            top: 720px
+                        .desc_wrap 
+                            .desc_buttons
+                                top: 940px
+@media (orientation: landscape) and (max-width: 520px)
+    body 
+        .container 
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-left: -130px!important
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -415px !important
+                        left: 155px
+@media (orientation: landscape) and (max-width: 490px)
+    body 
+        .container 
+            .firstSection 
+                .firstSection_wrap 
+                    .firstImgs
+                        margin-left: -145px!important
+            .secondSection 
+                .secondSection_wrap 
+                    .secondImgs
+                        margin-left: -200px!important
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -425px !important
+@media (orientation: landscape) and (max-width: 460px)
+    body 
+        .container
+            .secondSection 
+                .secondSection_wrap 
+                    .secondContent 
+                        .secondTitle, .secondText
+                            width: 380px
+            .thirdSection 
+                .thirdSection_wrap 
+                    .thirdImgs
+                        margin-left: -430px !important
+            .fourthSection 
+                .fourthSection_wrap 
+                    .meeting_wrap
+                        .vertical
+                            top: 745px
+                        .desc_wrap 
+                            .desc_buttons
+                                top: 970px
